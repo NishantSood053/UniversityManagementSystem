@@ -6,10 +6,30 @@ import com.ums.students.Student;
 
 public class Course implements ICourse {
 
+	String title;
+	int code;
+	int weightOfAssignment;
+	int weightOfMidterm;
+	int weightOfFinal;
+	boolean hasProject;
+	int weightOfProject;
+	
+	public Course(String title, int code,int weightOfAssignment, int weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
+		super();
+		this.title = title;
+		this.code = code;
+		this.weightOfAssignment = weightOfAssignment;
+		this.weightOfMidterm = weightOfMidterm;
+		this.weightOfFinal = weightOfFinal;
+		this.weightOfProject = weightOfProject;
+		this.hasProject = hasProject;
+	}
+
+	
 	@Override
 	public String Title() {
 		// TODO Auto-generated method stub
-		return null;
+		return title;
 	}
 
 	@Override
@@ -69,7 +89,7 @@ public class Course implements ICourse {
 	@Override
 	public int Code() {
 		// TODO Auto-generated method stub
-		return 0;
+		return code;
 	}
 
 	@Override
