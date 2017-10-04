@@ -63,11 +63,8 @@ public class CourseTests {
 
 	@Test
 	public void testCode() {
-		University university = new University();
-		Course course1 = university.CreateCourse("asdasd",112345,1,1,1,1,false);
-		assertEquals("TestCode", 112345, course1.Code());
-
-	
+		Course course = new Course("Software Engineering",115001,20,20,30,30,true);
+		assertEquals("TestCode", 115001, course.Code());
 	}
 
 	@Test
