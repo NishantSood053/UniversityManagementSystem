@@ -6,6 +6,26 @@ import com.ums.courses.Course;
 
 public class Student implements IStudent{
 
+	
+	int studentNumber;
+	String name;
+	List<Course> completedCourse;
+	List<Course> currentCourses;
+	boolean isFullTime;
+	boolean isCreated;
+	
+
+	public Student(int studentNumber, String name, List<Course> completedCourse, List<Course> currentCourses,
+			boolean isFullTime, boolean isCreated) {
+		super();
+		this.studentNumber = studentNumber;
+		this.name = name;
+		this.completedCourse = completedCourse;
+		this.currentCourses = currentCourses;
+		this.isFullTime = isFullTime;
+		this.isCreated = isCreated;
+	}
+
 	@Override
 	public List<Course> CompletedCourses() {
 		// TODO Auto-generated method stub
