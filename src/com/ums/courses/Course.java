@@ -1,6 +1,9 @@
 package com.ums.courses;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ums.students.Student;
 
@@ -8,21 +11,24 @@ public class Course implements ICourse {
 
 	String title;
 	int code;
-	int weightOfAssignment;
 	int weightOfMidterm;
 	int weightOfFinal;
 	boolean hasProject;
 	int weightOfProject;
+	int numberOfAssignments;
+	List<Integer> assignmentWeights = new ArrayList<Integer>();
 	
-	public Course(String title, int code,int weightOfAssignment, int weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
+	
+	public Course(String title, int code,int numberOfAssignements,List<Integer> assignmentWeights, int weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
 		super();
 		this.title = title;
 		this.code = code;
-		this.weightOfAssignment = weightOfAssignment;
 		this.weightOfMidterm = weightOfMidterm;
 		this.weightOfFinal = weightOfFinal;
 		this.weightOfProject = weightOfProject;
 		this.hasProject = hasProject;
+		this.numberOfAssignments = numberOfAssignements;
+		this.assignmentWeights = assignmentWeights;
 	}
 
 	
@@ -40,8 +46,7 @@ public class Course implements ICourse {
 
 	@Override
 	public int WeightOfAssignment(int assignmentNumber) {
-		// TODO Auto-generated method stub
-		return 0;
+		return assignmentWeights.get(assignmentNumber);
 	}
 
 	@Override
