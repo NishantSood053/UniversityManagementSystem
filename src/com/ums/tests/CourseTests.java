@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.ums.courses.Course;
-import com.ums.university.University;
+
 
 public class CourseTests {
 	
@@ -65,6 +65,7 @@ public class CourseTests {
 	public void testCode() {
 		Course course = new Course("Software Engineering",115001,20,20,30,30,true);
 		assertEquals("TestCode", 115001, course.Code());
+		
 	}
 
 	@Test
