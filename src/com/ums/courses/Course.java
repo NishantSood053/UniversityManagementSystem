@@ -17,9 +17,11 @@ public class Course implements ICourse {
 	int weightOfProject;
 	int numberOfAssignments;
 	List<Integer> assignmentWeights = new ArrayList<Integer>();
+	List<Student> students = new ArrayList<Student>();
 	
 	
-	public Course(String title, int code,int numberOfAssignements,List<Integer> assignmentWeights, int weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
+	public Course(String title, int code,int numberOfAssignements,List<Integer> assignmentWeights, 
+			int weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
 		super();
 		this.title = title;
 		this.code = code;
@@ -41,7 +43,7 @@ public class Course implements ICourse {
 	@Override
 	public List<Student> GetStudents() {
 		// TODO Auto-generated method stub
-		return null;
+		return students;
 	}
 
 	@Override
@@ -50,15 +52,15 @@ public class Course implements ICourse {
 	}
 
 	@Override
-	public int WeightOfMidterm(int midtermNum) {
+	public int WeightOfMidterm() {
 		// TODO Auto-generated method stub
-		return 0;
+		return weightOfMidterm;
 	}
 
 	@Override
 	public int WeightOfFinal() {
 		// TODO Auto-generated method stub
-		return 0;
+		return weightOfFinal;
 	}
 
 	@Override
@@ -70,7 +72,7 @@ public class Course implements ICourse {
 	@Override
 	public boolean HasProject() {
 		// TODO Auto-generated method stub
-		return false;
+		return hasProject;
 	}
 
 	@Override
@@ -82,12 +84,22 @@ public class Course implements ICourse {
 	@Override
 	public boolean AddStudent(Student s) {
 		// TODO Auto-generated method stub
-		return false;
+		students.add(s);
+		return true;
 	}
 
 	@Override
 	public boolean RemoveStudent(Student s) {
 		// TODO Auto-generated method stub
+		for(int i=0; i < students.size(); i++) 
+		{
+			if(students.contains(s)) 
+			{
+				int index = students.indexOf(s);
+				students.remove(index);
+				return true;
+			}
+		}
 		return false;
 	}
 

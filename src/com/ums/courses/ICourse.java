@@ -11,7 +11,7 @@ public interface ICourse {
 	List<Student> GetStudents();
 	List<Integer> PreRequisities();
 	int WeightOfAssignment(int assignmentNumber);
-	int WeightOfMidterm(int midtermNum);
+	int WeightOfMidterm();
 	int WeightOfFinal();
 	int MarkForStudent(Student student);
 	boolean HasProject();
