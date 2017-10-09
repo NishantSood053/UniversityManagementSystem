@@ -11,6 +11,7 @@ public class Student implements IStudent{
 	String name;
 	List<Course> completedCourse;
 	List<Course> currentCourses;
+	Course selectedCourse;
 	boolean isFullTime;
 	boolean isCreated;
 	
@@ -29,60 +30,80 @@ public class Student implements IStudent{
 	@Override
 	public List<Course> CompletedCourses() {
 		// TODO Auto-generated method stub
-		return null;
+		return completedCourse;
 	}
 
 	@Override
 	public int StudentNumber() {
 		// TODO Auto-generated method stub
-		return 0;
+		return studentNumber;
 	}
 
 	@Override
 	public String Name() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 	@Override
 	public List<Course> CurrentCourses() {
 		// TODO Auto-generated method stub
-		return null;
+		return currentCourses;
 	}
 
 	@Override
 	public boolean IsFullTime() {
 		// TODO Auto-generated method stub
-		return false;
+		return isFullTime;
 	}
 
 	@Override
 	public boolean IsCreated() {
 		// TODO Auto-generated method stub
-		return false;
+		return isCreated;
 	}
 
 	@Override
-	public Course SelectCourse(List<Course> courses) {
+	public Course SelectCourse(Course course) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		selectedCourse = course;
+		
+		//Course Selected
+		return selectedCourse;
 	}
 
 	@Override
 	public boolean RegisterCourse(Course course) {
 		// TODO Auto-generated method stub
-		return false;
+		if(completedCourse.contains(course)) 
+		{
+			return false;
+		}
+		
+		currentCourses.add(course);
+		return true;
 	}
 
 	@Override
 	public boolean DropCourse(Course course) {
-		// TODO Auto-generated method stub
+		
+		if(selectedCourse == course) 
+		{
+			selectedCourse = null;
+			return true;//Course Dropped Successfully
+		}
 		return false;
 	}
 
 	@Override
 	public boolean DeregisterCourse(Course course) {
 		// TODO Auto-generated method stub
+		if(currentCourses.contains(course)) 
+		{
+			currentCourses.remove(course);
+			return true;
+		}
 		return false;
 	}
 

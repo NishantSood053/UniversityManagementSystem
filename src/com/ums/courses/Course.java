@@ -11,17 +11,18 @@ public class Course implements ICourse {
 
 	String title;
 	int code;
-	int weightOfMidterm;
+	
 	int weightOfFinal;
 	boolean hasProject;
 	int weightOfProject;
 	int numberOfAssignments;
-	List<Integer> assignmentWeights = new ArrayList<Integer>();
+	List<Integer> weightOfAssignments = new ArrayList<Integer>();
+	List<Integer> weightOfMidterm = new ArrayList<Integer>();
 	List<Student> students = new ArrayList<Student>();
 	
 	
-	public Course(String title, int code,int numberOfAssignements,List<Integer> assignmentWeights, 
-			int weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
+	public Course(String title, int code,List<Integer> weightOfAssignments, 
+			List<Integer> weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject) {
 		super();
 		this.title = title;
 		this.code = code;
@@ -29,8 +30,7 @@ public class Course implements ICourse {
 		this.weightOfFinal = weightOfFinal;
 		this.weightOfProject = weightOfProject;
 		this.hasProject = hasProject;
-		this.numberOfAssignments = numberOfAssignements;
-		this.assignmentWeights = assignmentWeights;
+		this.weightOfAssignments = weightOfAssignments;
 	}
 
 	
@@ -48,13 +48,13 @@ public class Course implements ICourse {
 
 	@Override
 	public int WeightOfAssignment(int assignmentNumber) {
-		return assignmentWeights.get(assignmentNumber);
+		return weightOfAssignments.get(assignmentNumber);
 	}
 
 	@Override
-	public int WeightOfMidterm() {
+	public int WeightOfMidterm(int midtermmNumber) {
 		// TODO Auto-generated method stub
-		return weightOfMidterm;
+		return weightOfMidterm.get(midtermmNumber);
 	}
 
 	@Override

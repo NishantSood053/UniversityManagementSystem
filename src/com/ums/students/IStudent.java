@@ -12,7 +12,7 @@ public interface IStudent {
 	List<Course> CurrentCourses();
 	boolean IsFullTime();
 	boolean IsCreated();
-	Course SelectCourse(List<Course> courses);
+	Course SelectCourse(Course courses);
 	boolean RegisterCourse(Course course);
 	boolean DropCourse(Course course);
 	boolean DeregisterCourse(Course course);
