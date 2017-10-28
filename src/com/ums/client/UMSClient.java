@@ -2,6 +2,7 @@ package com.ums.client;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -33,8 +34,11 @@ public class UMSClient implements Runnable{
 			logger.info(String.format("%d : Connected to server: %s", ID,socket.getInetAddress()));
 			logger.info(String.format("%d : Connected to portid: %s", ID,socket.getLocalPort()));
 	    	this.start();
-	    	System.out.println("Welcome To University Management System");
-	    	System.out.println("Greeting To Start!");
+	    	//ClientTerminal.getInstance().DisplayMessageOnTerminal("Welcome To University Management System");
+	    	//ClientTerminal.getInstance().DisplayMessageOnTerminal("Greeting To Start!");
+		System.out.println("Welcome To University Management System");
+		System.out.println("Greeting To Start!");
+		
 		} catch(UnknownHostException uhe) {  
 			System.err.println(ID + ": Unknown Host");
 			String message = String.format("Exception thrown : %s \n", uhe.getMessage());
@@ -75,6 +79,7 @@ public class UMSClient implements Runnable{
 				if (streamOut != null) {
 					streamOut.flush();
 					streamOut.write(console.readLine() + "\n");
+					//streamOut.write(ClientTerminal.getInstance().ProcessMessageOnTerminal(""));
 				} else {
 					System.out.println(ID + ": Stream Closed");
 				}

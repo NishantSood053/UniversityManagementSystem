@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.ums.students.Student;
 import com.ums.utilities.RandomWeights;
+import com.ums.utilities.TermEvents;
 import com.ums.courses.*;
 
 public class StudentTests {
@@ -18,67 +19,68 @@ public class StudentTests {
 	@Test
 	public void testCompletedCourses() {
 		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
+		
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		Course course2 = new Course("Computer Animation",115002,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
 		completedCourses.add(course1);
 		completedCourses.add(course2);
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Completed Courses", completedCourses, s.CompletedCourses());
+		Student student = new Student(12345,"Nishant",true);
+		student.SetCompletedCourses(completedCourses);
+		
+		assertEquals("Completed Courses", completedCourses, student.CompletedCourses());
 	}
 
 	@Test
 	public void testStudentNumber() {
-		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Student Number", 12345, s.StudentNumber());
+		Student student = new Student(12345,"Nishant",true);
+		assertEquals("Student Number", 12345, student.StudentNumber());
 	}
 
 	@Test
 	public void testName() {
-		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Student Name", "Nishant", s.Name());
+		Student student = new Student(12345,"Nishant",true);
+		assertEquals("Student Name", "Nishant", student.Name());
 	}
 
 	@Test
 	public void testCurrentCourses() {
-		List<Course> completedCourses = new ArrayList<Course>();
+		
 		List<Course> currentCourses = new ArrayList<Course>();
+		
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		Course course2 = new Course("Computer Animation",115002,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		Course course3 = new Course("Virtual Environments",115003,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
 		currentCourses.add(course1);
 		currentCourses.add(course2);
-		currentCourses.add(course3);
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Current Courses", currentCourses, s.CurrentCourses());
+		Student student = new Student(12345,"Nishant",true);
+		student.SetCurrentCourses(currentCourses);
+		
+		assertEquals("Current Courses", currentCourses, student.CurrentCourses());
+		
 	}
 
 	@Test
 	public void testIsFullTime() {
-		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Student is Full Time", true, s.IsFullTime());
+		Student student = new Student(12345,"Nishant",true);
+		assertTrue("Student is Full Time", student.IsFullTime());
+	}
+	
+	@Test
+	public void testIsNotFullTime() 
+	{
+		Student student = new Student(12345,"Nishant",false);
+		assertFalse("Student is not Full Time", student.IsFullTime());
 	}
 
 	@Test
 	public void testIsCreated() {
-		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Student is Created", true, s.IsCreated());
+		Student student = new Student(12345,"Nishant",true);
+		assertEquals("Student is Created", true, student.IsCreated());
 	}
 
 	@Test
@@ -87,14 +89,33 @@ public class StudentTests {
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
 		
-		List<Course> completedCourses = new ArrayList<Course>();
+		Student student = new Student(12345,"Nishant",true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		
+		student.SetSelectedCourse(course1);
+		
+		assertEquals("Course Selected", course1, student.SelectCourse(course1));
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testSelectCourseFails() {
+		
+		int numberOfAssignments = 3;
+		int numberOfMidterms = 1;
+		boolean hasProject = true;
+		
+		Student student = new Student(12345,"Nishant",true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		//Already Registered to the course
 		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
+		currentCourses.add(course1);
+		student.SetCurrentCourses(currentCourses);
 		
-		assertEquals("Course Selected", course1, s.SelectCourse(course1));
+		//Select the Course
+		student.SetSelectedCourse(course1);
+		
+		assertEquals("Course Cannot be Selected", null, student.SelectCourse(course1));
 	}
 
 	@Test
@@ -102,38 +123,57 @@ public class StudentTests {
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		Course course2 = new Course("Computer Animation",115002,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		Course course3 = new Course("Virtual Environments",115003,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course3 = new Course("Virtual Environments",115003,numberOfAssignments,numberOfMidterms,10,hasProject,true);
 		List<Course> completedCourses = new ArrayList<Course>();
 		List<Course> currentCourses = new ArrayList<Course>();
 		
 		currentCourses.add(course3);
-		
 		completedCourses.add(course1); // Course Already Completed
-		
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Register Course", true, s.RegisterCourse(course2));
+		TermEvents.SYSTEMENDED = true;
+		TermEvents.REGISTERATIONENDED = false;
+		Student s = new Student(12345,"Nishant",true);
+		s.SetSelectedCourse(course2); //Select course 2 to be selected
+		assertTrue("Register Course", s.RegisterCourse(course2));
+		TermEvents.SYSTEMENDED = false;
 	}
 	
-	@Test
+	@Test(expected=NullPointerException.class)
 	public void testFailedToRegisterCourse() 
 	{
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		Course course2 = new Course("Computer Animation",115002,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
 		List<Course> completedCourses = new ArrayList<Course>();
 		List<Course> currentCourses = new ArrayList<Course>();
 		currentCourses.add(course2);
 		
 		completedCourses.add(course1); // Course Already Completed
 		
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		assertEquals("Course Already Completed", false, s.RegisterCourse(course1));
+		Student s = new Student(12345,"Nishant",true);
+		assertFalse("Course Already Completed", s.RegisterCourse(course1));
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testFailedToRegisterCourseNotSelected() 
+	{
+		int numberOfAssignments = 3;
+		int numberOfMidterms = 1;
+		boolean hasProject = true;
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		List<Course> completedCourses = new ArrayList<Course>();
+		List<Course> currentCourses = new ArrayList<Course>();
+		currentCourses.add(course2);
+		
+		completedCourses.add(course1); // Course Already Completed
+		
+		Student s = new Student(12345,"Nishant",true);
+		
+		assertFalse("Course Already Completed", s.RegisterCourse(course1));
 	}
 
 	@Test
@@ -141,33 +181,60 @@ public class StudentTests {
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		
-		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
-		
-		
-		s.SelectCourse(course1); //Select the course first
-		
-		assertEquals("Dropped Course ", true, s.DropCourse(course1));
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Student s = new Student(12345,"Nishant",true);
+		s.SetSelectedCourse(course1); //Select the course first
+		TermEvents.SYSTEMENDED = true;
+		TermEvents.REGISTERATIONENDED = true;
+		assertTrue("Dropped Course ",s.DropCourse(course1));
+		TermEvents.SYSTEMENDED = false;
+		TermEvents.REGISTERATIONENDED = false;
 	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testDropCourseFalied() {
+		int numberOfAssignments = 3;
+		int numberOfMidterms = 1;
+		boolean hasProject = true;
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Student s = new Student(12345,"Nishant",true);
+		s.SetSelectedCourse(course1); //Select the course first
+		TermEvents.SYSTEMENDED = true;
+		TermEvents.REGISTERATIONENDED = true;
+		assertFalse("Dropped Course ",s.DropCourse(course2));
+		TermEvents.SYSTEMENDED = false;
+		TermEvents.REGISTERATIONENDED = false;
+	}
+
 
 	@Test
 	public void testDeregisterCourse() {
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
-		RandomWeights n = new RandomWeights(numberOfAssignments, numberOfMidterms, hasProject);
-		Course course1 = new Course("Software Engineering",115001,n.WeightOfAssignments(),n.WeightOfMidterms(),n.WeightOfFinals(),n.WeightOfProject(),true);
-		
-		List<Course> completedCourses = new ArrayList<Course>();
-		List<Course> currentCourses = new ArrayList<Course>();
-		Student s = new Student(12345,"Nishant",completedCourses,currentCourses,true,true);
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);	
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Student s = new Student(12345,"Nishant",true);
+		s.SetSelectedCourse(course1);
 		s.RegisterCourse(course1);
+		TermEvents.SYSTEMENDED = true;
 		
-		assertEquals("Deregister Course ", true, s.DeregisterCourse(course1));
+		assertTrue("Deregister Course ", s.DeregisterCourse(course1));
+		TermEvents.SYSTEMENDED = false;
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testDeregisterCourseFailed() {
+		int numberOfAssignments = 3;
+		int numberOfMidterms = 1;
+		boolean hasProject = true;
+		Course course1 = new Course("Software Engineering",115001,numberOfAssignments,numberOfMidterms,10,hasProject,true);	
+		Course course2 = new Course("Computer Animation",115002,numberOfAssignments,numberOfMidterms,10,hasProject,true);
+		Student s = new Student(12345,"Nishant",true);
+		s.SetSelectedCourse(course2);
+	
+		assertFalse("Deregister Course ", s.DeregisterCourse(course2));
 	}
 
 }

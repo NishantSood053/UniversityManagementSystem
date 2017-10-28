@@ -12,8 +12,7 @@ import org.apache.log4j.Logger;
 import com.ums.handler.InputHandler;
 import com.ums.handler.model.Client;
 import com.ums.handler.model.ServerOutput;
-import com.ums.tables.CourseTable;
-import com.ums.tables.StudentTable;
+import com.ums.university.University;
 import com.ums.utilities.Config;
 import com.ums.utilities.Trace;
 
@@ -41,13 +40,8 @@ public class UMSServer  implements Runnable{
 		if (thread == null) {
 			thread = new Thread(this);
 			thread.start();
+			University.getInstance(); //Initialize the university class
 			logger.info(String.format("Server started: %s %d", server,thread.getId()));
-			//Initialize the tables
-			CourseTable.getInstance();
-			StudentTable.getInstance();
-		  	logger.error("This is an error Meesage");
-		  	logger.debug("This is a debug message");
-		  	logger.info("This is an Info Meesage");
 			System.out.println("Server started successfully!");
 		}
 	}
@@ -82,6 +76,7 @@ public class UMSServer  implements Runnable{
 	}
 
 	public synchronized void handle(int ID, String input) {
+		
 		if (input.equals("Exit")) 
 		{
 			logger.info(String.format("Client: %d Exits", ID));

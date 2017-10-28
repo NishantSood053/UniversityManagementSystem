@@ -1,36 +1,46 @@
 package com.ums.students;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.plaf.SliderUI;
+
+import org.apache.log4j.Logger;
+
 import com.ums.courses.Course;
+import com.ums.university.University;
+import com.ums.utilities.TermEvents;
+import com.ums.utilities.Trace;
 
 public class Student implements IStudent{
 
+	private Logger logger = Trace.getInstance().getLogger(this);
 	
 	int studentNumber;
 	String name;
-	List<Course> completedCourse;
+	List<Course> completedCourses;
 	List<Course> currentCourses;
-	Course selectedCourse;
+	Course selectedCourse = null;
 	boolean isFullTime;
 	boolean isCreated;
 	
 
-	public Student(int studentNumber, String name, List<Course> completedCourse, List<Course> currentCourses,
-			boolean isFullTime, boolean isCreated) {
+	
+	public Student(int studentNumber, String studentName, boolean isFullTime) {
 		super();
 		this.studentNumber = studentNumber;
-		this.name = name;
-		this.completedCourse = completedCourse;
-		this.currentCourses = currentCourses;
+		this.name = studentName;
 		this.isFullTime = isFullTime;
-		this.isCreated = isCreated;
+		this.isCreated = true;
+		this.completedCourses = new ArrayList<Course>();
+		this.currentCourses = new ArrayList<Course>();
+		logger.info("Student Initialized "+studentNumber);
 	}
 
 	@Override
 	public List<Course> CompletedCourses() {
 		// TODO Auto-generated method stub
-		return completedCourse;
+		return completedCourses;
 	}
 
 	@Override
@@ -67,44 +77,140 @@ public class Student implements IStudent{
 	public Course SelectCourse(Course course) {
 		// TODO Auto-generated method stub
 		
-		selectedCourse = course;
-		
+		if(completedCourses.contains(course) || currentCourses.contains(course)) 
+		{
+			logger.error("Cannot Select the Course "+course.Title());
+			throw new NullPointerException("Course Cannot be selected/dropped");
+		}
+		SetSelectedCourse(course);
+		logger.info("Course Selected "+course.Title());
 		//Course Selected
 		return selectedCourse;
 	}
 
 	@Override
 	public boolean RegisterCourse(Course course) {
-		// TODO Auto-generated method stub
-		if(completedCourse.contains(course)) 
+		
+		if(TermEvents.TERMENDED) 
 		{
-			return false;
+			logger.error("Cannot Register for Course: Term has been Ended");
+			throw new NullPointerException("Term has Ended");
+		
+		}else if (TermEvents.REGISTERATIONENDED) 
+		{
+			logger.error("Cannot Register for Course: Registeration has Ended");
+			throw new NullPointerException("Registeration has Ended");
 		}
 		
+		// TODO Auto-generated method stub
+		if( course != selectedCourse || currentCourses.contains(course) || completedCourses.contains(course)) 
+		{
+			logger.error("Cannot Register for Course: You might have already completed the course or registered");
+			throw new NullPointerException("Course not selected or is/it already completed/exists");
+			
+		}
+		logger.info("Course Registred Successfully "+course.Title());
 		currentCourses.add(course);
+		selectedCourse = null;
 		return true;
 	}
 
 	@Override
 	public boolean DropCourse(Course course) {
 		
-		if(selectedCourse == course) 
+		if(!TermEvents.SYSTEMENDED) 
 		{
-			selectedCourse = null;
-			return true;//Course Dropped Successfully
+			logger.error("Cannot Drop for Course: Term has not started yet");
+			throw new NullPointerException("Course not dropped: Term has not started yet");
 		}
-		return false;
+		if(!TermEvents.REGISTERATIONENDED) 
+		{
+			logger.error("Cannot Drop for Course: Term has not started yet");
+			throw new NullPointerException("Course not dropped: Term has not started yet");
+		}
+		
+		if(TermEvents.TERMENDED) 
+		{
+			logger.error("Cannot Drop for Course: Term has ended");
+			throw new NullPointerException("Course not dropped: Term has ended");
+		}
+		
+		if(selectedCourse != course || completedCourses.contains(course) || currentCourses.contains(course)) 
+		{	
+			logger.error("Cannot Drop for Course: Because its not selected");
+			throw new NullPointerException("Course not dropped because its not selected");
+			
+		}else 
+		{
+			logger.info("Course Dropped Successfully "+course.Title());
+			selectedCourse = null;
+			return true;
+		}
+		
 	}
 
 	@Override
 	public boolean DeregisterCourse(Course course) {
-		// TODO Auto-generated method stub
-		if(currentCourses.contains(course)) 
+		
+		if(!TermEvents.SYSTEMENDED) 
 		{
+			logger.error("Cannot Deregister the Course: Registration has not started yet");
+			throw new NullPointerException("Course not Deregistered: Term has not started yet");
+		}
+		if(TermEvents.REGISTERATIONENDED) 
+		{
+			logger.error("Cannot Deregister the Course: Registration has ended");
+			throw new NullPointerException("Cannot Deregister the Course: Registration has ended");
+		}
+
+		if(TermEvents.TERMENDED) 
+		{
+			logger.error("Cannot Deregister the Course: Term has ended");
+			throw new NullPointerException("Cannot Deregister the Course: Term has ended");
+		}
+		
+		
+		if(!currentCourses.contains(course)) 
+		{
+			logger.error("Cannot Deregister the Course:"+course.Title()+" You are currenlty not registered");
+			throw new NullPointerException("You are not registered to this course");
+		}
+		
+		else 
+		{
+			logger.info("Course Deregistered Successfully "+course.Title());
 			currentCourses.remove(course);
+			//Remove the student from  this course
+			course.RemoveStudent(this);
+			selectedCourse = null;
 			return true;
 		}
-		return false;
+		
+	}
+	
+	public void SetCompletedCourses(List<Course> completedCourses) 
+	{
+		this.completedCourses = completedCourses;
+	}
+	
+	public void SetCurrentCourses(List<Course> currentCourses) 
+	{
+		this.currentCourses = currentCourses;
+	}
+	
+	public void SetSelectedCourse(Course selectedCourse) 
+	{
+		this.selectedCourse  = selectedCourse;
+	}
+	
+	public Course GetSelectedCourse() 
+	{
+		if(selectedCourse == null) 
+		{
+			logger.error("Currently no course is selected");
+			throw new NullPointerException("No Current Selected Course");
+		}
+		return selectedCourse;
 	}
 
 }

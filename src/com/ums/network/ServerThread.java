@@ -9,6 +9,7 @@ import java.net.Socket;
 
 import org.apache.log4j.Logger;
 
+import com.ums.client.ClientTerminal;
 import com.ums.utilities.Trace;
 
 /* Modified method based on the course COMP 3004 example*/

@@ -7,12 +7,12 @@ public interface IUniversity {
 	
 	List<Course> Courses();
 	List<Student> Students();
-	Course CreateCourse(String title, int code,List<Integer> weightOfAssignments, 
-			List<Integer> weightOfMidterm, int weightOfFinal,int weightOfProject, boolean hasProject);
-	void RegisterStudentforCourse(Student student,Course aCourse);
+	Course CreateCourse(String title,int code,int numberOfAssignments,
+			int numberOfMidterms,int capSize,boolean hasProject,boolean shouldGenerateWeights);
+	Student RegisterStudentforCourse(Student student,Course aCourse) throws Exception;
 	void CancelCourse(Course course);
-	void DestroyCourse(Course course);
-	Student CreateStudent(int studentNumber, String name, List<Course> completedCourse, List<Course> currentCourses,
-			boolean isFullTime, boolean isCreated);
+	boolean DestroyCourse(Course course);
+	Student CreateStudent(int studentNumber, String name, boolean isFullTime);
+	boolean DeleteStudent(Student student);
 
 }
