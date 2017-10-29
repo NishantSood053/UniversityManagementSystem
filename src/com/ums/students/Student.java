@@ -79,8 +79,8 @@ public class Student implements IStudent{
 		
 		if(completedCourses.contains(course) || currentCourses.contains(course)) 
 		{
-			logger.error("Cannot Select the Course "+course.Title());
-			throw new NullPointerException("Course Cannot be selected/dropped");
+			logger.error("Cannot Select the Course "+course.Title() +" Because its either you are already registered or it has been completed");
+			throw new NullPointerException("Course Cannot be selected/dropped: Because its either you are already registered or it has been completed");
 		}
 		SetSelectedCourse(course);
 		logger.info("Course Selected "+course.Title());
@@ -91,24 +91,39 @@ public class Student implements IStudent{
 	@Override
 	public boolean RegisterCourse(Course course) {
 		
+		String message = "";
 		if(TermEvents.TERMENDED) 
 		{
-			logger.error("Cannot Register for Course: Term has been Ended");
+			message = "Cannot Register for Course: Term has been Ended";
+			logger.error(message);
 			throw new NullPointerException("Term has Ended");
 		
 		}else if (TermEvents.REGISTERATIONENDED) 
 		{
-			logger.error("Cannot Register for Course: Registeration has Ended");
+			message = "Cannot Register for Course: Registeration has Ended";
+			logger.error(message);
 			throw new NullPointerException("Registeration has Ended");
 		}
 		
 		// TODO Auto-generated method stub
 		if( course != selectedCourse || currentCourses.contains(course) || completedCourses.contains(course)) 
 		{
-			logger.error("Cannot Register for Course: You might have already completed the course or registered");
+			message = "Cannot Register for Course: You might have already completed the course or registered";
+			logger.error(message);
 			throw new NullPointerException("Course not selected or is/it already completed/exists");
 			
 		}
+		
+		
+		if((IsFullTime() && CurrentCourses().size() > University.MaxCoursesForFTStudents) 
+				|| (!IsFullTime() && CurrentCourses().size() > University.MaxCoursesForPTStudents)) 
+		{
+			
+			message = "Cannot register for more courses: You are not allowed based on your status";
+			logger.error(message);
+			return false;
+		}
+		
 		logger.info("Course Registred Successfully "+course.Title());
 		currentCourses.add(course);
 		selectedCourse = null;

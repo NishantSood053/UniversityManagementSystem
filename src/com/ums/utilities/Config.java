@@ -6,10 +6,10 @@ public class Config {
 	public static final String DEFAULT_HOST = "127.0.0.1";
 	public static final int MAX_BORROWED_ITEMS = 3;
 	//20 seconds for 1 day
-	public static final int STIMULATED_DAY = 1 * 20 * 1000;
+	public static final int STIMULATED_DAY = 1 * 2 * 1000;
 	public static final int OVERDUE = 1;
-	public static final int REGISTRATION_END = 10;//14;
-	public static final int TERM_END = 10;//84;
+	public static final int REGISTRATION_END = 1;//14;
+	public static final int TERM_END = 1;//84;
 	public static final int SYSTEM_END = 1;//20;
 	public static final String CLERK_PASSWORD = "admin";
 	

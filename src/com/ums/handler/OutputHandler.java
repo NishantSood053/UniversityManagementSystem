@@ -367,7 +367,7 @@ public class OutputHandler {
 	        		output.setState(STUDENT);
 	        	}catch(Exception e) 
 	        	{
-	        		SetStateWithMessage(output,SELECTCOURSE,"Course Cannot be Selected.\nPlease enter the Correct Course code(It should be a 6 digit integer value)");
+	        		SetStateWithMessage(output,SELECTCOURSE,e.getMessage());
 	        	}
             
 	   

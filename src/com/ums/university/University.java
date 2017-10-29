@@ -1,7 +1,9 @@
 package com.ums.university;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Timer;
 import org.apache.log4j.Logger;
@@ -25,6 +27,10 @@ public class University implements IUniversity {
 	
 	List<Course> courses = new ArrayList<Course>();
 	List<Student> students = new ArrayList<Student>();
+	
+	public static final int MaxCoursesForFTStudents = 4;
+	public static final int MaxCoursesForPTStudents = 2;
+	
 	static int universityCourses;
 	
 	public static final University getInstance() {
@@ -86,6 +92,24 @@ public class University implements IUniversity {
 		System.out.println("Term has been ended");
 		//Add Marks for each student for each course
 		logger.info("Setting marks for students");
+		String message ="";
+		for(int i =0; i< courses.size(); i++) 
+		{
+			Course course = courses.get(i);
+			List<Student> studentsEnrolled = course.GetStudents();
+			Map<Student,Integer> marksForEnrolledStudents = new HashMap<Student,Integer>();
+			for(int j=0; j < studentsEnrolled.size(); j++) 
+			{
+				//Set Marks for Each Enrolled Student
+				int marks = GetRandomMarks(70, 100);
+				marksForEnrolledStudents.put(studentsEnrolled.get(j), marks);
+				message = "Added :"+"Marks for "+studentsEnrolled.get(j).Name() +" "+marks+" % Marks in "+ course.Title();
+				System.out.println(message);
+				logger.info(message);
+			}
+			//Set Mark for Each enrolled student in each course
+			course.setEnrolledStudents(marksForEnrolledStudents);
+		}
 		//Set the marks recorded event
 		TimeSource.getInstance().setMarksRecordedEvent();
 		
@@ -94,7 +118,27 @@ public class University implements IUniversity {
 	private void MarksRecorded() {
 		//Display the marks of students who got more than 80
 		logger.info("Marks recorded");
-		
+		String message = "";
+		System.out.println("Displaying Marks for students who got more than 80% in each Course");
+		for(int i =0; i< courses.size(); i++) 
+		{
+			Course course = courses.get(i);
+			List<Student> studentsEnrolled = course.GetStudents();
+			for(int j=0; j < studentsEnrolled.size(); j++) 
+			{
+				//Get Marks for Each Enrolled Student
+				int marks = course.MarkForStudent(studentsEnrolled.get(j));
+				if(marks >=80) 
+				{
+					//Clear the message
+					message = "";
+					message = studentsEnrolled.get(j).Name() +" got "+marks+" % Marks in "+ course.Title();
+					System.out.println(message);
+					logger.info(message);
+				}
+			}
+			
+		}
 	}
 
 	private Integer GetRandomMarks(int min,int max) {
@@ -148,8 +192,16 @@ public class University implements IUniversity {
 		logger.info("Initializing courses..");
 		Course course1 = new Course("Software Engineering", 115001, 2,2,30,true,true);
 		Course course2 = new Course("Computer Animation", 115002, 2,2,30,true,true);
+		Course course3 = new Course("Information and Communication System", 114001, 2,2,30,true,true);
+		Course course4 = new Course("Virtual Environments", 114002, 2,2,30,true,true);
+		Course course5 = new Course("Fault Tolerence", 114003, 2,2,30,true,true);
+		Course course6 = new Course("Distributed Database Technologies", 114004, 2,2,30,true,true);
 		courses.add(course1);
 		courses.add(course2);
+		courses.add(course3);
+		courses.add(course4);
+		courses.add(course5);
+		courses.add(course6);
 	}
 
 	@Override
@@ -168,7 +220,7 @@ public class University implements IUniversity {
 	@Override
 	public Student RegisterStudentforCourse(Student student, Course aCourse) {
 		// TODO Auto-generated method stub
-		
+		String message = "";
 		boolean shouldBeRegistered = true;
 		List<Student> enrolledStudents = new ArrayList<Student>();
 		//If registration has not ended
@@ -177,13 +229,16 @@ public class University implements IUniversity {
 			enrolledStudents = aCourse.GetStudents();
 			for(int i =0 ;i< enrolledStudents.size(); i++) 
 			{
+				//If the student is already registered to the course
 				if(enrolledStudents.get(i).StudentNumber() == student.StudentNumber()) 
 				{
 					shouldBeRegistered = false;
+					message = "This student is already registered in this course";
 					break;
 				}
+				
 			}
-
+		
 		}
 		
 		if (shouldBeRegistered) {
@@ -194,8 +249,8 @@ public class University implements IUniversity {
 
 		}else {
 
-			logger.error("Cannot Register the student to this course");
-			throw new NullPointerException("Cannot register for this course");
+			logger.error(message);
+			throw new NullPointerException(message);
 		}
 
 		return student;

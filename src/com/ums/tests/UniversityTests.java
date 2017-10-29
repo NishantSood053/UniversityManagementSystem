@@ -70,67 +70,63 @@ public class UniversityTests {
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
 		University u = new University();
-		//StartServer.start = System.currentTimeMillis();
-		/*
-		try {
-			Thread.sleep(Config.STIMULATED_DAY * 1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
+		
 		Course course = u.CreateCourse("Object Oriented Software Develoment",115003,numberOfAssignments,numberOfMidterms,30,hasProject,true);
-		//Course course = u.CreateCourse("Object Oriented Software Develoment",115003,numberOfAssignments,numberOfMidterms,30,hasProject,true);
 		
 		assertTrue("Create Course",u.Courses().contains(course));
 
 	}
 	
-	@Test(expected = NullPointerException.class)
-	public void testCreateCourseFaliedPastDeadline() {
+	@Test
+	public void testCreateCourseFailedPastDeadline() {
 	
 		int numberOfAssignments = 3;
 		int numberOfMidterms = 1;
 		boolean hasProject = true;
 		University u = new University();
-		/*
-		StartServer.start = System.currentTimeMillis();
-		try {
-			Thread.sleep(Config.STIMULATED_DAY * (Config.OVERDUE + 1));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		List<Course> courses = new ArrayList<Course>();
-		courses.add(u.CreateCourse("Software Engineering",115001,numberOfAssignments,numberOfMidterms,30,hasProject,true));
-		assertEquals("Course Creation Failed",courses,u.Courses());
+		
+		TermEvents.SYSTEMENDED = true;
+		try{
+			u.CreateCourse("Object Oriented Software Development",115004,numberOfAssignments,numberOfMidterms,30,hasProject,true);
+
+		}catch(Exception e)
+		{
+			assertFalse("Course Creation Failed",true);
+		}
+		assertFalse("Course Creation Failed",false);
+		TermEvents.SYSTEMENDED = false;
 
 	}
 	@Test
 	public void testCreateStudent() {
 		University university = new University();
-		/*
-		StartServer.start = System.currentTimeMillis();
-		try {
-			Thread.sleep(Config.STIMULATED_DAY * 1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		Student s = university.CreateStudent(12345, "Nishant", true);
-		
 		assertTrue("Student Created!", s!=null);
 	}
 
 	@Test
 	public void testRegisterStudentforCourse() {
 		University university = new University();
-		//StartServer.start = System.currentTimeMillis();
+		
 		Student s = university.CreateStudent(12345, "Nishant",true);
 	
-		Student registeredStudent = university.RegisterStudentforCourse(s, university.getInstance().GetCourse(115001));
+		Student registeredStudent = university.RegisterStudentforCourse(s, university.GetCourse(115001));
 		
 		assertEquals("Student Registered",s, registeredStudent);
+	}
+	
+	@Test
+	public void testRegisterStudentforCourseFailed() 
+	{
+		boolean isRegistered;
+		University university = new University();
+		Student s = university.CreateStudent(12345, "Nishant",false);
+		isRegistered = s.RegisterCourse(s.SelectCourse(university.GetCourse(114001)));
+		isRegistered = s.RegisterCourse(s.SelectCourse(university.GetCourse(115002)));
+		isRegistered = s.RegisterCourse(s.SelectCourse(university.GetCourse(114002)));
+		isRegistered = s.RegisterCourse(s.SelectCourse(university.GetCourse(114003)));
+		
+		assertFalse("Student Registered",isRegistered);
 	}
 	
 
