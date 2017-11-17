@@ -104,6 +104,12 @@ public class InputHandler {
 	            	oo.setOutput(output);
 	            	oo.setState(state);
             }else if (input.equals("8")){
+            		output = "Enter Student Number and CourseId(seperated by comma)";
+                state = REGISTERSTUDENT;
+                oo.setOutput(output);
+	            oo.setState(state);
+            }
+            else if (input.equals("9")){
             		output = "Successfully Log Out!";
                 state = WAITING;
                 oo.setOutput(output);
@@ -192,7 +198,22 @@ public class InputHandler {
 		    		oo.setOutput(output);
 		    		oo.setState(state);
 		    	}
-	    }else if(state == STUDENT) 
+	    }else if(state == REGISTERSTUDENT) 
+	    {
+		    	if(input.equalsIgnoreCase("menu")){
+		    		output = Config.AdminMenu;
+		    		state = ADMIN;
+		    		oo.setOutput(output);
+		    		oo.setState(state);
+		    	}else {
+		    		o = outputHandler.registerStudentForCourse(input);
+		    		output=o.getOutput();
+		    		state=o.getState();
+		    		oo.setOutput(output);
+		    		oo.setState(state);
+		    	}
+	    }
+	    else if(state == STUDENT) 
 	    {
 	    		//Show available courses
 		    	if (input.equals("1")) {

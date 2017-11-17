@@ -86,6 +86,7 @@ public class University implements IUniversity {
 		TimeSource.getInstance().setRegisterationEndTimer();
 		System.out.println("Registeration Starts Now!");
 		logger.info("Registeration Starts Now");
+		//InitializeRegisterationForStudents();
 	}
 	private void TermEnded() {
 		logger.info("Term has been ended");
@@ -167,24 +168,7 @@ public class University implements IUniversity {
 			students.add(s);
 			
 		}
-		
-		for(int j=0 ; j <courses.size(); j++) 
-		{
-			
-			for(int k=0 ; k< students.size(); k++) 
-			{
-
-				try {
-					RegisterStudentforCourse(students.get(k), courses.get(j));
-					System.out.println("Registering student "+ students.get(k).Name()+" to course "+courses.get(j).Title());
-				}catch(Exception e) 
-				{
-					System.out.println(e.getMessage());
-				}
-			}
-		}
-		
-		
+				
 		
 	}
 
@@ -202,6 +186,26 @@ public class University implements IUniversity {
 		courses.add(course4);
 		courses.add(course5);
 		courses.add(course6);
+	}
+	
+	private void InitializeRegisterationForStudents() 
+	{
+		for(int j=0 ; j <courses.size(); j++) 
+		{
+			
+			for(int k=0 ; k< students.size(); k++) 
+			{
+
+				try {
+					RegisterStudentforCourse(students.get(k), courses.get(j));
+					System.out.println("Registering student "+ students.get(k).Name()+" to course "+courses.get(j).Title());
+				}catch(Exception e) 
+				{
+					System.out.println(e.getMessage());
+				}
+			}
+		}
+		
 	}
 
 	@Override
@@ -326,6 +330,10 @@ public class University implements IUniversity {
 		{
 			logger.error("Cannot Create the Course: Registration has ended");
 			throw new NullPointerException("Registeration has Ended");
+		}else if(TermEvents.SYSTEMENDED) 
+		{
+			logger.error("Cannot Create the Course: Admin Time Ended");
+			throw new NullPointerException("Admin Time Ended");
 		}
 		
 		
@@ -404,6 +412,10 @@ public class University implements IUniversity {
 			}
 		}
 		
+		if(student == null) 
+		{
+			throw new NullPointerException("Student Not Found");
+		}
 		
 		return student;
 	}

@@ -98,6 +98,11 @@ public class Student implements IStudent{
 			logger.error(message);
 			throw new NullPointerException("Term has Ended");
 		
+		}else if (!TermEvents.SYSTEMENDED) 
+		{
+			message = "Cannot Register for Course: Registration has not started yet";
+			logger.error(message);
+			throw new NullPointerException("Registeration has not started yet");
 		}else if (TermEvents.REGISTERATIONENDED) 
 		{
 			message = "Cannot Register for Course: Registeration has Ended";

@@ -98,26 +98,31 @@ public class OutputHandler {
         		if(!isCourseCodeCorrect(strArray[0])) 
              {
         				SetStateWithMessage(output, CREATECOURSE, "Course Code Incorrect(Should be 6 digit and should not start from 0)");
+        				output.setOutput("Unsuccess");
              }
         		//If the number of assignments is not correct
         		else if(!isInteger(strArray[2]) || numberOfAssignments < 0 || numberOfAssignments > 5 ) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The assignments input should be integer and not more than 5");
+        			output.setOutput("Unsuccess");
              }
         		//If the number of midterms is not correct
         		else if(!isInteger(strArray[3]) || numberOfMidterms < 0 || numberOfMidterms > 2 ) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The midterm input should be integer and not more than 2");
+        			output.setOutput("Unsuccess");
              }
         		//If the class size is not correct
         		else if(!isInteger(strArray[3]) || classSize < 25) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The input should be integer and minimum class size should be 25");
+        			output.setOutput("Unsuccess");
              }
         		//If the has project value is not correct
         		else if(!isBoolean(strArray[5])) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The input for HasProject should be either \"true\" or \"false\" ");
+        			output.setOutput("Unsuccess");
              }
              else 
              {
@@ -131,9 +136,11 @@ public class OutputHandler {
             	 try {
             		 University.getInstance().CreateCourse(courseTitle,courseCode,numberOfAssignments,numberOfMidterms,classSize,hasProject,true);
             		 output.setOutput("Course Created Successfully\n");
+            		 output.setOutput("Success");
             		 output.setState(ADMIN);
             	 }catch (Exception e) {
             		 SetStateWithMessage(output, CREATECOURSE, e.getMessage());
+            		 output.setOutput("Unsuccess");
             	 	}
              }
     		
@@ -392,6 +399,47 @@ public class OutputHandler {
 		}
 		
 		return output.getOutput();
+	}
+	
+	public Output registerStudentForCourse(String input) 
+	{
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        
+        //Expect the array to be of length 3
+        if(strArray.length != 2) 
+        {
+        		SetStateWithMessage(output, REGISTERSTUDENT, "Please enter all the input parameters");
+        		
+        }else 
+        {
+	        	int studentNumber = 0;
+	        Student student = null;
+	        int courseCode = 0;
+	        
+	        if(!isNumber(strArray[0])) 
+	        {
+	        		SetStateWithMessage(output, REGISTERSTUDENT, "Student Number Invalid");
+	        }else if(!isCourseCodeCorrect(strArray[1])) 
+	        {
+	    			SetStateWithMessage(output, REGISTERSTUDENT, "Course Code Incorrect(Should be 6 digit and should not start from 0)");
+	        }else {
+		        	 studentNumber = Integer.parseInt(strArray[0]);
+		        	 courseCode = Integer.parseInt(strArray[1]);
+		        	 try {
+		        		 Course course = University.getInstance().GetCourse(courseCode);
+		        		 student = University.getInstance().GetStudent(studentNumber);
+		        		 University.getInstance().RegisterStudentforCourse(student,course);
+		        		 output.setOutput("STUDENT Registered Successfully\n");
+		        		 output.setState(ADMIN);
+		        	 }catch(Exception e)
+		        	 {
+		        		 SetStateWithMessage(output, ADMIN, e.getMessage());
+		        	 }
+	         }
+        }
+		return output;
 	}
 	
 	public String dropCourse() {
