@@ -234,11 +234,11 @@ public class OutputHandler {
 	
 	public Output cancelCourse(String input) {
 		Output output=new Output("",0);
-		System.out.println("Input Valie"+input);
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {
         		SetStateWithMessage(output, CANCELCOURSE, "Please enter all the input parameters");
+        		output.setOutput(Config.FALIURE);
         		
         }else 
         {
@@ -248,6 +248,7 @@ public class OutputHandler {
 	        	}catch(Exception e) 
 	        	{
 	        		SetStateWithMessage(output,CANCELCOURSE,"Please enter the Correct Course code(It should be a 6 digit integer value)");
+	        		output.setOutput(Config.FALIURE);
 	        	}
         		
             
@@ -256,8 +257,10 @@ public class OutputHandler {
 	        		University.getInstance().CancelCourse(course);
 	        		output.setOutput("Course Cancelled Successfully\n");
 	        		output.setState(ADMIN);
+	        		output.setOutput(Config.SUCCESS);
 	        	}catch (Exception e) {
 	        		SetStateWithMessage(output, CANCELCOURSE, "Course Cannot be Canceled (Course does not exist in the list)");
+	        		output.setOutput(Config.FALIURE);
 	        	}
 	   
         }
@@ -266,9 +269,7 @@ public class OutputHandler {
 	}
 	
 	public Output deleteCourse(String input) {
-		Output output=new Output("",0);
-		
-		
+		Output output=new Output("",0);	
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {

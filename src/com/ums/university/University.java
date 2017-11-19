@@ -42,14 +42,24 @@ public class University implements IUniversity {
 		return _instance;
 	}
 	
-	public void Reset() 
-	{
-		courses.clear();
-		students.clear();
+	public void Reset() {
+		TermEvents.SYSTEMENDED = false;
+		TermEvents.REGISTERATIONENDED = false;
+		TermEvents.TERMENDED = false;
+		TimeSource.getInstance().cancelAllTimers();
+		InitializeCourses();
+		InitializeStudents();
+		TimeSource.getInstance().addMyEventListener(new UMSEventListener() {
+			@Override
+			public void UMSEventReceived(UMSEvent event) {
+				FiredUMSEvent(event);
+			}
+
+		});
 	}
 	
 	public University() {
-		Reset();
+		
 		InitializeCourses();
 		InitializeStudents();
 		universityCourses = courses.size();
@@ -84,6 +94,8 @@ public class University implements IUniversity {
 			MarksRecorded();
 		}	
 	}
+	
+	
 	
 	private void SystemEnded() {
 		System.out.println("Admin Time Ended");

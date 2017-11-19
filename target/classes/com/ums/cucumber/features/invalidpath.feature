@@ -123,5 +123,26 @@ Feature: ALL UMS INVALID FEATURES
 			And the user inputs 5
 			When the admin deletes student 8567244
 			Then delete student faliure	
-			
+
+#Admin Cancels the course
+
+	Scenario: Admin cancels the course after registeration ends
+		Given the university system has started
+	    And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+	    And Wait for Registration End Event to Fire
+		And the user inputs 1 
+		And the user logs in with password admin
+	   	And the user inputs 6
+	    When the admin cancel course 115070	
+	    Then cancel course faliure
+	    
+	Scenario: Admin cancels the course after term ends
+		Given the university system has started
+	    And Wait for System Time Start Event to Fire
+		And the user inputs 1 
+		And the user logs in with password admin
+	   	And the user inputs 6
+	    When the admin cancel course 115070	
+	    Then cancel course faliure
 					

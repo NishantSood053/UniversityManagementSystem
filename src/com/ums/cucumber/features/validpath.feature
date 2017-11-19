@@ -85,6 +85,23 @@ Feature: ALL UMS VALID FEATURES
 		Examples:
 	    | student id		 | name       | is fulltime		|
 	    | 8543730      	 | wick       | false            |
+	    
+#Admin Cancel the Course
+
+Scenario Outline: Admin cancels the course before term ends
+		Given the university system has started
+	    And Wait for System Time Start Event to Fire
+		And the user inputs 1 
+		And the user logs in with password admin
+	   	And the user inputs 1
+		And the admin creates the course <course code>,<title>,<number of assignments>,<number of midterms>,<classsize>,<has a project>
+	    And the user inputs 6
+	    When the admin cancel course <course code>
+	    Then cancel course success
+	
+	    Examples: 
+	    | course code	| title		 						| number of assignments    | number of midterms | classsize 	| has a project			   |
+		| 115070			| Internetworking Technologies		| 2    					   | 2 				   | 30 			| true 					   |
 	   		
  #LOGOUT 
     		

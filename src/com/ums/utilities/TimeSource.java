@@ -38,6 +38,9 @@ public class TimeSource implements ITimeSource {
 
 	public TimeSource() 
 	{
+		systemEndTimer = new Timer("System End Timer");//create a new timer
+		termEndTimer = new Timer("Term End Timer");//create a new timer
+		registerationEndTimer = new Timer("Registeration End Timer");//create a new timer
 		eventTermStarts = new UMSEvent(this,UMSEvents.TERMSTART);
 		eventTermEnds = new UMSEvent(this, UMSEvents.TERMENDED);
 		eventRegisterationStarts = new UMSEvent(this,UMSEvents.REGISTERATIONSTART);
@@ -70,7 +73,7 @@ public class TimeSource implements ITimeSource {
 
 	private void setSystemEndTimer() {
 
-		systemEndTimer = new Timer("System End Timer");//create a new timer
+		
 		systemEndTimer.schedule(new TimerTask() {
 			@Override
 			public void run() {
@@ -85,7 +88,7 @@ public class TimeSource implements ITimeSource {
 	public void setTermEndTimer() 
 	{
 
-		termEndTimer = new Timer("Term End Timer");//create a new timer
+		
 		termEndTimer.schedule(new TimerTask() {
 			@Override
 			public void run() {
@@ -97,7 +100,7 @@ public class TimeSource implements ITimeSource {
 
 	public void setRegisterationEndTimer() 
 	{
-		registerationEndTimer = new Timer("Registeration End Timer");//create a new timer
+		
 		registerationEndTimer.schedule(new TimerTask() {
 			@Override
 			public void run() {
@@ -132,6 +135,13 @@ public class TimeSource implements ITimeSource {
 	public long passedTime() 
 	{
 		return System.currentTimeMillis() - this.start;
+	}
+	
+	public void cancelAllTimers() 
+	{
+		systemEndTimer.cancel();
+		registerationEndTimer.cancel();
+		termEndTimer.cancel();
 	}
 
 }
