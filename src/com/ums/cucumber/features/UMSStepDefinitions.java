@@ -116,6 +116,13 @@ public class UMSStepDefinitions  {
 		state = serverOutput.getState();
 		output = serverOutput.getOutput();
 	}
+	
+	@When("^the user selects the course (.*)$")
+	public void the_user_selects_the_course(String courseCode) throws Throwable {
+		serverOutput = inputHandler.processInput(courseCode, state);
+		state = serverOutput.getState();
+		output = serverOutput.getOutput();
+	}
 
 	//------THEN's--------------
 	
@@ -154,6 +161,7 @@ public class UMSStepDefinitions  {
 	public void the_student_is_not_logged_in() throws Throwable {
 		assertThat(state, equalTo(OutputHandler.STUDENTLOGIN));
 	}
+	
 	
 
 }

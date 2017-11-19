@@ -145,4 +145,16 @@ Feature: ALL UMS INVALID FEATURES
 	   	And the user inputs 6
 	    When the admin cancel course 115070	
 	    Then cancel course faliure
-					
+
+#Student Selects the Course
+Scenario Outline: Student Selects a course which does not exist
+		Given the university system has started
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		When the user selects the course <course code>
+		Then select course faliure 
+	
+		Examples:
+    		|course code	|
+    		|112001  	|	 				

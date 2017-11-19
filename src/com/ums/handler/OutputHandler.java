@@ -378,6 +378,7 @@ public class OutputHandler {
         if(input.equals("") || input.equals(" ")) 
         {
         		SetStateWithMessage(output, SELECTCOURSE, "Please enter all the input parameters");
+        		output.setOutput(Config.FALIURE);
         		
         }else 
         {
@@ -388,9 +389,11 @@ public class OutputHandler {
 	        		loggedInStudent.SelectCourse(course);
 	        		output.setOutput("Course Selected Successfully\n");
 	        		output.setState(STUDENT);
+	        		output.setOutput(Config.SUCCESS);
 	        	}catch(Exception e) 
 	        	{
 	        		SetStateWithMessage(output,SELECTCOURSE,e.getMessage());
+	        		output.setOutput(Config.FALIURE);
 	        	}
             
 	   

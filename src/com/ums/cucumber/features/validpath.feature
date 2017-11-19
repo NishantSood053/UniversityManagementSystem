@@ -102,7 +102,7 @@ Scenario Outline: Admin cancels the course before term ends
 	    Examples: 
 	    | course code	| title		 						| number of assignments    | number of midterms | classsize 	| has a project			   |
 		| 115070			| Internetworking Technologies		| 2    					   | 2 				   | 30 			| true 					   |
-	   		
+			   		
  #LOGOUT 
     		
     	Scenario Outline: Admin Logouts
@@ -115,3 +115,18 @@ Scenario Outline: Admin cancels the course before term ends
 		Examples:
     		|input|
     		|9	  |
+    		
+  #Student Selects a Course
+  Scenario Outline: Student Selects an exisiting Course
+		Given the university system has started
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		When the user selects the course <course code>
+		Then select course success 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|	 
+    		
+  

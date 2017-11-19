@@ -117,7 +117,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 130353416,
+  "duration": 137337577,
   "status": "passed"
 });
 formatter.match({
@@ -130,7 +130,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 1591465,
+  "duration": 1706776,
   "status": "passed"
 });
 formatter.match({
@@ -143,14 +143,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 59308,
+  "duration": 53823,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_admin_is_not_logged_in()"
 });
 formatter.result({
-  "duration": 959233,
+  "duration": 944770,
   "status": "passed"
 });
 formatter.scenario({
@@ -191,7 +191,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2759360,
+  "duration": 2999852,
   "status": "passed"
 });
 formatter.match({
@@ -204,7 +204,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 57341,
+  "duration": 64640,
   "status": "passed"
 });
 formatter.match({
@@ -217,14 +217,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 45150,
+  "duration": 36125,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_admin_is_not_logged_in()"
 });
 formatter.result({
-  "duration": 15631,
+  "duration": 19729,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -326,7 +326,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2465721,
+  "duration": 3119685,
   "status": "passed"
 });
 formatter.match({
@@ -339,7 +339,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 59717,
+  "duration": 62334,
   "status": "passed"
 });
 formatter.match({
@@ -352,14 +352,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
 });
 formatter.result({
-  "duration": 143627,
+  "duration": 145475,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_student_is_not_logged_in()"
 });
 formatter.result({
-  "duration": 20793,
+  "duration": 29389,
   "status": "passed"
 });
 formatter.scenario({
@@ -400,7 +400,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2632775,
+  "duration": 3600277,
   "status": "passed"
 });
 formatter.match({
@@ -413,7 +413,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 53543,
+  "duration": 41944,
   "status": "passed"
 });
 formatter.match({
@@ -426,14 +426,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
 });
 formatter.result({
-  "duration": 54129,
+  "duration": 77271,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_student_is_not_logged_in()"
 });
 formatter.result({
-  "duration": 14566,
+  "duration": 20422,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -573,14 +573,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 3351359,
+  "duration": 2842641,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 20085,
+  "duration": 26437,
   "status": "passed"
 });
 formatter.match({
@@ -593,7 +593,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 67160,
+  "duration": 59747,
   "status": "passed"
 });
 formatter.match({
@@ -606,7 +606,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 52790,
+  "duration": 47366,
   "status": "passed"
 });
 formatter.match({
@@ -619,7 +619,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 55046,
+  "duration": 59790,
   "status": "passed"
 });
 formatter.match({
@@ -652,7 +652,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "duration": 1541378,
+  "duration": 1474953,
   "status": "passed"
 });
 formatter.match({
@@ -665,7 +665,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 48686,
+  "duration": 41889,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -809,21 +809,21 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 4122202,
+  "duration": 2450878,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 18864,
+  "duration": 19176,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Registration_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 22954,
+  "duration": 16326,
   "status": "passed"
 });
 formatter.match({
@@ -836,7 +836,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 68427,
+  "duration": 69923,
   "status": "passed"
 });
 formatter.match({
@@ -849,7 +849,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 53631,
+  "duration": 37241,
   "status": "passed"
 });
 formatter.match({
@@ -862,7 +862,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 47658,
+  "duration": 40779,
   "status": "passed"
 });
 formatter.match({
@@ -895,7 +895,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "duration": 720391,
+  "duration": 695090,
   "status": "passed"
 });
 formatter.match({
@@ -908,7 +908,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 47936,
+  "duration": 49421,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -1049,21 +1049,21 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 3976418,
+  "duration": 3531939,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 14090,
+  "duration": 17247,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Registration_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 12740,
+  "duration": 16147,
   "status": "passed"
 });
 formatter.match({
@@ -1076,7 +1076,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 39213,
+  "duration": 53980,
   "status": "passed"
 });
 formatter.match({
@@ -1089,7 +1089,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 37066,
+  "duration": 53096,
   "status": "passed"
 });
 formatter.match({
@@ -1102,7 +1102,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 35939,
+  "duration": 49227,
   "status": "passed"
 });
 formatter.match({
@@ -1123,7 +1123,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_student_john_true(int,String,String)"
 });
 formatter.result({
-  "duration": 191590,
+  "duration": 191680,
   "status": "passed"
 });
 formatter.match({
@@ -1136,7 +1136,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 66557,
+  "duration": 48431,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -1267,14 +1267,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 4133673,
+  "duration": 4685754,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 18177,
+  "duration": 16504,
   "status": "passed"
 });
 formatter.match({
@@ -1287,7 +1287,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 48904,
+  "duration": 46622,
   "status": "passed"
 });
 formatter.match({
@@ -1300,7 +1300,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 507957,
+  "duration": 54497,
   "status": "passed"
 });
 formatter.match({
@@ -1313,7 +1313,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 43957,
+  "duration": 50830,
   "status": "passed"
 });
 formatter.match({
@@ -1334,7 +1334,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_student_john_true(int,String,String)"
 });
 formatter.result({
-  "duration": 524423,
+  "duration": 688961,
   "status": "passed"
 });
 formatter.match({
@@ -1347,7 +1347,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 55606,
+  "duration": 74997,
   "status": "passed"
 });
 formatter.scenario({
@@ -1403,14 +1403,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2852370,
+  "duration": 2663951,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 18974,
+  "duration": 17344,
   "status": "passed"
 });
 formatter.match({
@@ -1423,7 +1423,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 50984,
+  "duration": 66519,
   "status": "passed"
 });
 formatter.match({
@@ -1436,7 +1436,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 41058,
+  "duration": 43742,
   "status": "passed"
 });
 formatter.match({
@@ -1449,7 +1449,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 56287,
+  "duration": 54675,
   "status": "passed"
 });
 formatter.match({
@@ -1462,7 +1462,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_deletes_course(String)"
 });
 formatter.result({
-  "duration": 112254,
+  "duration": 76991,
   "status": "passed"
 });
 formatter.match({
@@ -1475,7 +1475,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 32587,
+  "duration": 49135,
   "status": "passed"
 });
 formatter.scenario({
@@ -1530,21 +1530,21 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2869714,
+  "duration": 2751139,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 17203,
+  "duration": 14230,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Term_End_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 22384,
+  "duration": 25659,
   "status": "passed"
 });
 formatter.match({
@@ -1557,7 +1557,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 46293,
+  "duration": 53441,
   "status": "passed"
 });
 formatter.match({
@@ -1570,7 +1570,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 42015,
+  "duration": 35335,
   "status": "passed"
 });
 formatter.match({
@@ -1583,7 +1583,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 347586,
+  "duration": 433146,
   "status": "passed"
 });
 formatter.match({
@@ -1596,7 +1596,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_deletes_course(String)"
 });
 formatter.result({
-  "duration": 74401,
+  "duration": 100782,
   "status": "passed"
 });
 formatter.match({
@@ -1609,7 +1609,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 28292,
+  "duration": 45211,
   "status": "passed"
 });
 formatter.scenario({
@@ -1675,28 +1675,28 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2738630,
+  "duration": 2485664,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 16897,
+  "duration": 22474,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Registration_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 12237,
+  "duration": 16710,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Term_End_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 13485,
+  "duration": 12999,
   "status": "passed"
 });
 formatter.match({
@@ -1709,7 +1709,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 45450,
+  "duration": 69047,
   "status": "passed"
 });
 formatter.match({
@@ -1722,7 +1722,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 47669,
+  "duration": 44963,
   "status": "passed"
 });
 formatter.match({
@@ -1735,7 +1735,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 35335,
+  "duration": 47302,
   "status": "passed"
 });
 formatter.match({
@@ -1748,7 +1748,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_deletes_student(String)"
 });
 formatter.result({
-  "duration": 119764,
+  "duration": 235011,
   "status": "passed"
 });
 formatter.match({
@@ -1761,7 +1761,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 31208,
+  "duration": 56231,
   "status": "passed"
 });
 formatter.scenario({
@@ -1811,14 +1811,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 3975808,
+  "duration": 3138332,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 13681,
+  "duration": 12403,
   "status": "passed"
 });
 formatter.match({
@@ -1831,7 +1831,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 46944,
+  "duration": 48208,
   "status": "passed"
 });
 formatter.match({
@@ -1844,7 +1844,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 35086,
+  "duration": 34980,
   "status": "passed"
 });
 formatter.match({
@@ -1857,7 +1857,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 55646,
+  "duration": 53695,
   "status": "passed"
 });
 formatter.match({
@@ -1870,7 +1870,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_deletes_student(String)"
 });
 formatter.result({
-  "duration": 96088,
+  "duration": 108524,
   "status": "passed"
 });
 formatter.match({
@@ -1883,7 +1883,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 49768,
+  "duration": 40061,
   "status": "passed"
 });
 formatter.scenario({
@@ -1949,28 +1949,28 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 1951899,
+  "duration": 2534203,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 12987,
+  "duration": 18509,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Registration_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 10045,
+  "duration": 17812,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Registration_End_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 16392,
+  "duration": 24565,
   "status": "passed"
 });
 formatter.match({
@@ -1983,7 +1983,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 65560,
+  "duration": 45973,
   "status": "passed"
 });
 formatter.match({
@@ -1996,7 +1996,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 53283,
+  "duration": 79783,
   "status": "passed"
 });
 formatter.match({
@@ -2009,7 +2009,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 36890,
+  "duration": 64156,
   "status": "passed"
 });
 formatter.match({
@@ -2022,7 +2022,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_cancel_course(String)"
 });
 formatter.result({
-  "duration": 92310,
+  "duration": 137683,
   "status": "passed"
 });
 formatter.match({
@@ -2035,7 +2035,7 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 30531,
+  "duration": 66664,
   "status": "passed"
 });
 formatter.scenario({
@@ -2085,14 +2085,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2315081,
+  "duration": 2177832,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 21960,
+  "duration": 13268,
   "status": "passed"
 });
 formatter.match({
@@ -2105,7 +2105,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 30565,
+  "duration": 31244,
   "status": "passed"
 });
 formatter.match({
@@ -2118,7 +2118,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 27898,
+  "duration": 39359,
   "status": "passed"
 });
 formatter.match({
@@ -2131,7 +2131,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 23672,
+  "duration": 50024,
   "status": "passed"
 });
 formatter.match({
@@ -2144,7 +2144,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_cancel_course(String)"
 });
 formatter.result({
-  "duration": 72719,
+  "duration": 82547,
   "status": "passed"
 });
 formatter.match({
@@ -2157,7 +2157,187 @@ formatter.match({
   "location": "UMSStepDefinitions.faliure(String)"
 });
 formatter.result({
-  "duration": 28949,
+  "duration": 36879,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "comments": [
+    {
+      "line": 149,
+      "value": "#Student Selects the Course"
+    }
+  ],
+  "line": 150,
+  "name": "Student Selects a course which does not exist",
+  "description": "",
+  "id": "all-ums-invalid-features;student-selects-a-course-which-does-not-exist",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 151,
+  "name": "the university system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 152,
+  "name": "the user inputs student",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 153,
+  "name": "the user logs in with studentnumber 8543748",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 154,
+  "name": "the user inputs 2",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 155,
+  "name": "the user selects the course \u003ccourse code\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 156,
+  "name": "select course faliure",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 158,
+  "name": "",
+  "description": "",
+  "id": "all-ums-invalid-features;student-selects-a-course-which-does-not-exist;",
+  "rows": [
+    {
+      "cells": [
+        "course code"
+      ],
+      "line": 159,
+      "id": "all-ums-invalid-features;student-selects-a-course-which-does-not-exist;;1"
+    },
+    {
+      "cells": [
+        "112001"
+      ],
+      "line": 160,
+      "id": "all-ums-invalid-features;student-selects-a-course-which-does-not-exist;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 160,
+  "name": "Student Selects a course which does not exist",
+  "description": "",
+  "id": "all-ums-invalid-features;student-selects-a-course-which-does-not-exist;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 151,
+  "name": "the university system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 152,
+  "name": "the user inputs student",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 153,
+  "name": "the user logs in with studentnumber 8543748",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 154,
+  "name": "the user inputs 2",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 155,
+  "name": "the user selects the course 112001",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 156,
+  "name": "select course faliure",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_university_system_has_started()"
+});
+formatter.result({
+  "duration": 2327358,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "student",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 44119,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "8543748",
+      "offset": 36
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
+});
+formatter.result({
+  "duration": 83756,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "2",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 52333,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "112001",
+      "offset": 28
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_selects_the_course(String)"
+});
+formatter.result({
+  "duration": 147716,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "select course",
+      "offset": 0
+    }
+  ],
+  "location": "UMSStepDefinitions.faliure(String)"
+});
+formatter.result({
+  "duration": 44150,
   "status": "passed"
 });
 formatter.uri("validpath.feature");
@@ -2279,7 +2459,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2371041,
+  "duration": 4286651,
   "status": "passed"
 });
 formatter.match({
@@ -2292,7 +2472,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 32244,
+  "duration": 33474,
   "status": "passed"
 });
 formatter.match({
@@ -2305,14 +2485,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 29502,
+  "duration": 33753,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_admin_is_logged_in()"
 });
 formatter.result({
-  "duration": 16298,
+  "duration": 15971,
   "status": "passed"
 });
 formatter.scenario({
@@ -2353,7 +2533,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2653806,
+  "duration": 2427846,
   "status": "passed"
 });
 formatter.match({
@@ -2366,7 +2546,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 33301,
+  "duration": 32963,
   "status": "passed"
 });
 formatter.match({
@@ -2379,14 +2559,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 43358,
+  "duration": 29088,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_admin_is_logged_in()"
 });
 formatter.result({
-  "duration": 14092,
+  "duration": 12161,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -2488,7 +2668,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 3540426,
+  "duration": 2062085,
   "status": "passed"
 });
 formatter.match({
@@ -2501,7 +2681,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 36594,
+  "duration": 33131,
   "status": "passed"
 });
 formatter.match({
@@ -2514,14 +2694,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
 });
 formatter.result({
-  "duration": 70742,
+  "duration": 53302,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_student_is_logged_in()"
 });
 formatter.result({
-  "duration": 17652,
+  "duration": 15174,
   "status": "passed"
 });
 formatter.scenario({
@@ -2562,7 +2742,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2649371,
+  "duration": 1872698,
   "status": "passed"
 });
 formatter.match({
@@ -2575,7 +2755,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 33897,
+  "duration": 27702,
   "status": "passed"
 });
 formatter.match({
@@ -2588,14 +2768,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
 });
 formatter.result({
-  "duration": 54206,
+  "duration": 39714,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_student_is_logged_in()"
 });
 formatter.result({
-  "duration": 14462,
+  "duration": 11495,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -2735,14 +2915,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 1939950,
+  "duration": 2438932,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 10938,
+  "duration": 13042,
   "status": "passed"
 });
 formatter.match({
@@ -2755,7 +2935,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 28363,
+  "duration": 33363,
   "status": "passed"
 });
 formatter.match({
@@ -2768,7 +2948,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 25504,
+  "duration": 31751,
   "status": "passed"
 });
 formatter.match({
@@ -2781,7 +2961,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 20847,
+  "duration": 30447,
   "status": "passed"
 });
 formatter.match({
@@ -2814,7 +2994,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "duration": 731728,
+  "duration": 734052,
   "status": "passed"
 });
 formatter.match({
@@ -2827,7 +3007,7 @@ formatter.match({
   "location": "UMSStepDefinitions.success(String)"
 });
 formatter.result({
-  "duration": 62500,
+  "duration": 50829,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -2958,14 +3138,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 1965404,
+  "duration": 2272426,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 12618,
+  "duration": 12450,
   "status": "passed"
 });
 formatter.match({
@@ -2978,7 +3158,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 40638,
+  "duration": 30186,
   "status": "passed"
 });
 formatter.match({
@@ -2991,7 +3171,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 263775,
+  "duration": 320692,
   "status": "passed"
 });
 formatter.match({
@@ -3004,7 +3184,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 24965,
+  "duration": 59694,
   "status": "passed"
 });
 formatter.match({
@@ -3025,7 +3205,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_student_john_true(int,String,String)"
 });
 formatter.result({
-  "duration": 341167,
+  "duration": 357000,
   "status": "passed"
 });
 formatter.match({
@@ -3038,7 +3218,7 @@ formatter.match({
   "location": "UMSStepDefinitions.success(String)"
 });
 formatter.result({
-  "duration": 25867,
+  "duration": 46594,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -3201,14 +3381,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 1915830,
+  "duration": 7916590,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 11293,
+  "duration": 14637,
   "status": "passed"
 });
 formatter.match({
@@ -3221,7 +3401,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 28105,
+  "duration": 41886,
   "status": "passed"
 });
 formatter.match({
@@ -3234,7 +3414,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 36276,
+  "duration": 34862,
   "status": "passed"
 });
 formatter.match({
@@ -3247,7 +3427,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 51213,
+  "duration": 40774,
   "status": "passed"
 });
 formatter.match({
@@ -3280,7 +3460,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "duration": 638394,
+  "duration": 611749,
   "status": "passed"
 });
 formatter.match({
@@ -3293,7 +3473,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 26613,
+  "duration": 29344,
   "status": "passed"
 });
 formatter.match({
@@ -3306,7 +3486,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_deletes_course(String)"
 });
 formatter.result({
-  "duration": 542737,
+  "duration": 386947,
   "status": "passed"
 });
 formatter.match({
@@ -3319,7 +3499,7 @@ formatter.match({
   "location": "UMSStepDefinitions.success(String)"
 });
 formatter.result({
-  "duration": 31007,
+  "duration": 26188,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -3473,14 +3653,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 7891202,
+  "duration": 2031302,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 14793,
+  "duration": 11186,
   "status": "passed"
 });
 formatter.match({
@@ -3493,7 +3673,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 58629,
+  "duration": 27027,
   "status": "passed"
 });
 formatter.match({
@@ -3506,7 +3686,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 57514,
+  "duration": 21279,
   "status": "passed"
 });
 formatter.match({
@@ -3519,7 +3699,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 27821,
+  "duration": 22520,
   "status": "passed"
 });
 formatter.match({
@@ -3540,7 +3720,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_student_john_true(int,String,String)"
 });
 formatter.result({
-  "duration": 295998,
+  "duration": 268318,
   "status": "passed"
 });
 formatter.match({
@@ -3553,7 +3733,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 23319,
+  "duration": 22219,
   "status": "passed"
 });
 formatter.match({
@@ -3566,7 +3746,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_deletes_student(String)"
 });
 formatter.result({
-  "duration": 196588,
+  "duration": 187406,
   "status": "passed"
 });
 formatter.match({
@@ -3579,7 +3759,7 @@ formatter.match({
   "location": "UMSStepDefinitions.success(String)"
 });
 formatter.result({
-  "duration": 26618,
+  "duration": 25639,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -3742,14 +3922,14 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2038450,
+  "duration": 3217967,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 12571,
+  "duration": 12006,
   "status": "passed"
 });
 formatter.match({
@@ -3762,7 +3942,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 30880,
+  "duration": 28140,
   "status": "passed"
 });
 formatter.match({
@@ -3775,7 +3955,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 24037,
+  "duration": 23548,
   "status": "passed"
 });
 formatter.match({
@@ -3788,7 +3968,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 21633,
+  "duration": 25934,
   "status": "passed"
 });
 formatter.match({
@@ -3821,7 +4001,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "duration": 646669,
+  "duration": 594735,
   "status": "passed"
 });
 formatter.match({
@@ -3834,7 +4014,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 69801,
+  "duration": 25742,
   "status": "passed"
 });
 formatter.match({
@@ -3847,7 +4027,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_admin_cancel_course(String)"
 });
 formatter.result({
-  "duration": 292973,
+  "duration": 227727,
   "status": "passed"
 });
 formatter.match({
@@ -3860,7 +4040,7 @@ formatter.match({
   "location": "UMSStepDefinitions.success(String)"
 });
 formatter.result({
-  "duration": 29109,
+  "duration": 26580,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -3965,7 +4145,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_university_system_has_started()"
 });
 formatter.result({
-  "duration": 2413548,
+  "duration": 1319044,
   "status": "passed"
 });
 formatter.match({
@@ -3978,7 +4158,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 38803,
+  "duration": 30462,
   "status": "passed"
 });
 formatter.match({
@@ -3991,7 +4171,7 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 30650,
+  "duration": 20978,
   "status": "passed"
 });
 formatter.match({
@@ -4004,14 +4184,194 @@ formatter.match({
   "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 28310,
+  "duration": 20207,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.the_admin_is_logged_out()"
 });
 formatter.result({
-  "duration": 18630,
+  "duration": 15170,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "comments": [
+    {
+      "line": 119,
+      "value": "#Student Selects a Course"
+    }
+  ],
+  "line": 120,
+  "name": "Student Selects an exisiting Course after registeration starts and before term starts",
+  "description": "",
+  "id": "all-ums-valid-features;student-selects-an-exisiting-course-after-registeration-starts-and-before-term-starts",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 121,
+  "name": "the university system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 122,
+  "name": "the user inputs student",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 123,
+  "name": "the user logs in with studentnumber 8543748",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 124,
+  "name": "the user inputs 2",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 125,
+  "name": "the user selects the course \u003ccourse code\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 126,
+  "name": "select course success",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 128,
+  "name": "",
+  "description": "",
+  "id": "all-ums-valid-features;student-selects-an-exisiting-course-after-registeration-starts-and-before-term-starts;",
+  "rows": [
+    {
+      "cells": [
+        "course code"
+      ],
+      "line": 129,
+      "id": "all-ums-valid-features;student-selects-an-exisiting-course-after-registeration-starts-and-before-term-starts;;1"
+    },
+    {
+      "cells": [
+        "115001"
+      ],
+      "line": 130,
+      "id": "all-ums-valid-features;student-selects-an-exisiting-course-after-registeration-starts-and-before-term-starts;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 130,
+  "name": "Student Selects an exisiting Course after registeration starts and before term starts",
+  "description": "",
+  "id": "all-ums-valid-features;student-selects-an-exisiting-course-after-registeration-starts-and-before-term-starts;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 121,
+  "name": "the university system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 122,
+  "name": "the user inputs student",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 123,
+  "name": "the user logs in with studentnumber 8543748",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 124,
+  "name": "the user inputs 2",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 125,
+  "name": "the user selects the course 115001",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 126,
+  "name": "select course success",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_university_system_has_started()"
+});
+formatter.result({
+  "duration": 1324253,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "student",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 28038,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "8543748",
+      "offset": 36
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
+});
+formatter.result({
+  "duration": 37228,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "2",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 19860,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "115001",
+      "offset": 28
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_selects_the_course(String)"
+});
+formatter.result({
+  "duration": 243804,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "select course",
+      "offset": 0
+    }
+  ],
+  "location": "UMSStepDefinitions.success(String)"
+});
+formatter.result({
+  "duration": 24965,
   "status": "passed"
 });
 });
