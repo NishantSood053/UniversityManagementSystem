@@ -1,65 +1,495 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("admincreatescourse.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("invalidpath.feature");
 formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "#Feature File Course Creation"
+      "value": "#Feature File contains all invalid paths"
     }
   ],
   "line": 2,
-  "name": "Admin Creates a Course",
+  "name": "ALL UMS INVALID FEATURES",
   "description": "",
-  "id": "admin-creates-a-course",
+  "id": "all-ums-invalid-features",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 3,
-  "name": "Admin Creates a course before registration starts",
+  "comments": [
+    {
+      "line": 4,
+      "value": "#LOGIN"
+    }
+  ],
+  "line": 5,
+  "name": "Admin Login with invalid password",
   "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts",
+  "id": "all-ums-invalid-features;admin-login-with-invalid-password",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 4,
-  "name": "the university is initialized",
+  "line": 6,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 5,
-  "name": "Wait for System Time Start Event to Fire",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 6,
-  "name": "the user selects admin option",
-  "keyword": "And "
-});
-formatter.step({
   "line": 7,
-  "name": "the admin logs in with password",
+  "name": "the user inputs \u003cinput\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "the admin selects create course option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "the admin creates the course by \u003ccourse code\u003e, \u003ctitle\u003e,   \u003cnumber of assignments\u003e, \u003cnumber of midterms\u003e, \u003cclasssize\u003e,\u003chas a project\u003e",
+  "name": "the user logs in with password \u003cpassword\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 10,
-  "name": "the course is created",
+  "line": 9,
+  "name": "the admin is not logged in",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 12,
+  "line": 11,
   "name": "",
   "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts;",
+  "id": "all-ums-invalid-features;admin-login-with-invalid-password;",
+  "rows": [
+    {
+      "cells": [
+        "input",
+        "password"
+      ],
+      "line": 12,
+      "id": "all-ums-invalid-features;admin-login-with-invalid-password;;1"
+    },
+    {
+      "cells": [
+        "admin",
+        "asdasdas"
+      ],
+      "line": 13,
+      "id": "all-ums-invalid-features;admin-login-with-invalid-password;;2"
+    },
+    {
+      "cells": [
+        "1",
+        "asdsn"
+      ],
+      "line": 14,
+      "id": "all-ums-invalid-features;admin-login-with-invalid-password;;3"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 13,
+  "name": "Admin Login with invalid password",
+  "description": "",
+  "id": "all-ums-invalid-features;admin-login-with-invalid-password;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 6,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 7,
+  "name": "the user inputs admin",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "the user logs in with password asdasdas",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 9,
+  "name": "the admin is not logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 131746293,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "admin",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 1830129,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "asdasdas",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
+});
+formatter.result({
+  "duration": 59782,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_admin_is_not_logged_in()"
+});
+formatter.result({
+  "duration": 1132188,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 14,
+  "name": "Admin Login with invalid password",
+  "description": "",
+  "id": "all-ums-invalid-features;admin-login-with-invalid-password;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 6,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 7,
+  "name": "the user inputs 1",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "the user logs in with password asdsn",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 9,
+  "name": "the admin is not logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 43347,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 56705,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "asdsn",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
+});
+formatter.result({
+  "duration": 37454,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_admin_is_not_logged_in()"
+});
+formatter.result({
+  "duration": 19721,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "line": 16,
+  "name": "Student Login with invalid password",
+  "description": "",
+  "id": "all-ums-invalid-features;student-login-with-invalid-password",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 17,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 18,
+  "name": "the user inputs \u003cinput\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "the user logs in with studentnumber \u003cid\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "the student is not logged in",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 22,
+  "name": "",
+  "description": "",
+  "id": "all-ums-invalid-features;student-login-with-invalid-password;",
+  "rows": [
+    {
+      "cells": [
+        "input",
+        "id"
+      ],
+      "line": 23,
+      "id": "all-ums-invalid-features;student-login-with-invalid-password;;1"
+    },
+    {
+      "cells": [
+        "student",
+        "1128790"
+      ],
+      "line": 24,
+      "id": "all-ums-invalid-features;student-login-with-invalid-password;;2"
+    },
+    {
+      "cells": [
+        "2",
+        "8872673"
+      ],
+      "line": 25,
+      "id": "all-ums-invalid-features;student-login-with-invalid-password;;3"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 24,
+  "name": "Student Login with invalid password",
+  "description": "",
+  "id": "all-ums-invalid-features;student-login-with-invalid-password;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 17,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 18,
+  "name": "the user inputs student",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "the user logs in with studentnumber 1128790",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "the student is not logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 26469,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "student",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 45798,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1128790",
+      "offset": 36
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
+});
+formatter.result({
+  "duration": 127138,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_student_is_not_logged_in()"
+});
+formatter.result({
+  "duration": 22104,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 25,
+  "name": "Student Login with invalid password",
+  "description": "",
+  "id": "all-ums-invalid-features;student-login-with-invalid-password;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 17,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 18,
+  "name": "the user inputs 2",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "the user logs in with studentnumber 8872673",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "the student is not logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 35190,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "2",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 63047,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "8872673",
+      "offset": 36
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
+});
+formatter.result({
+  "duration": 58121,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_student_is_not_logged_in()"
+});
+formatter.result({
+  "duration": 21311,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "comments": [
+    {
+      "line": 27,
+      "value": "#Course Creation"
+    }
+  ],
+  "line": 28,
+  "name": "Admin Creates a redundant course before registration starts",
+  "description": "",
+  "id": "all-ums-invalid-features;admin-creates-a-redundant-course-before-registration-starts",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 29,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 30,
+  "name": "Wait for System Time Start Event to Fire",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "the user inputs 1",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "the user logs in with password admin",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "the user inputs 1",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "the admin creates the course \u003ccourse code\u003e,\u003ctitle\u003e,\u003cnumber of assignments\u003e,\u003cnumber of midterms\u003e,\u003cclasssize\u003e,\u003chas a project\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 35,
+  "name": "the course unsuccess",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 37,
+  "name": "",
+  "description": "",
+  "id": "all-ums-invalid-features;admin-creates-a-redundant-course-before-registration-starts;",
   "rows": [
     {
       "cells": [
@@ -67,11 +497,11 @@ formatter.examples({
         "title",
         "number of assignments",
         "number of midterms",
-        "class size",
-        "has a project(true/false)"
+        "classsize",
+        "has a project"
       ],
-      "line": 13,
-      "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts;;1"
+      "line": 38,
+      "id": "all-ums-invalid-features;admin-creates-a-redundant-course-before-registration-starts;;1"
     },
     {
       "cells": [
@@ -82,297 +512,215 @@ formatter.examples({
         "30",
         "true"
       ],
-      "line": 14,
-      "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts;;2"
-    },
-    {
-      "cells": [
-        "115002",
-        "Computer Animation",
-        "2",
-        "2",
-        "30",
-        "true"
-      ],
-      "line": 15,
-      "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts;;3"
+      "line": 39,
+      "id": "all-ums-invalid-features;admin-creates-a-redundant-course-before-registration-starts;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 14,
-  "name": "Admin Creates a course before registration starts",
+  "line": 39,
+  "name": "Admin Creates a redundant course before registration starts",
   "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts;;2",
+  "id": "all-ums-invalid-features;admin-creates-a-redundant-course-before-registration-starts;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 4,
-  "name": "the university is initialized",
+  "line": 29,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 5,
+  "line": 30,
   "name": "Wait for System Time Start Event to Fire",
   "keyword": "And "
 });
 formatter.step({
-  "line": 6,
-  "name": "the user selects admin option",
+  "line": 31,
+  "name": "the user inputs 1",
   "keyword": "And "
 });
 formatter.step({
-  "line": 7,
-  "name": "the admin logs in with password",
+  "line": 32,
+  "name": "the user logs in with password admin",
   "keyword": "And "
 });
 formatter.step({
-  "line": 8,
-  "name": "the admin selects create course option",
+  "line": 33,
+  "name": "the user inputs 1",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "the admin creates the course by 115001, Software Engineering,   2, 2, \u003cclasssize\u003e,\u003chas a project\u003e",
+  "line": 34,
+  "name": "the admin creates the course 115001,Software Engineering,2,2,30,true",
   "matchedColumns": [
     0,
     1,
     2,
-    3
+    3,
+    4,
+    5
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 10,
-  "name": "the course is created",
+  "line": 35,
+  "name": "the course unsuccess",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_university_is_initialized()"
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
 });
 formatter.result({
-  "duration": 158799122,
+  "duration": 31091,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 181765,
+  "duration": 270600,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_user_selects_admin_option()"
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 276165,
+  "duration": 67943,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_admin_logs_in_with_password(String)"
+  "arguments": [
+    {
+      "val": "admin",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 382682,
-  "error_message": "cucumber.runtime.CucumberException: Arity mismatch: Step Definition \u0027com.ums.cucumber.features.UMSStepDefinitions.the_admin_logs_in_with_password(String) in file:/Users/nishantsood/Workspace/Eclipse/UniversityManagementSystem/target/classes/\u0027 with pattern [^the admin logs in with password$] is declared with 1 parameters. However, the gherkin step has 0 arguments []. \nStep: And the admin logs in with password\n\tat cucumber.runtime.StepDefinitionMatch.arityMismatch(StepDefinitionMatch.java:102)\n\tat cucumber.runtime.StepDefinitionMatch.transformedArgs(StepDefinitionMatch.java:60)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)\n",
-  "status": "failed"
+  "duration": 39993,
+  "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_admin_selects_create_course_option()"
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 42875,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "115001",
-      "offset": 32
+      "offset": 29
+    },
+    {
+      "val": "Software Engineering",
+      "offset": 36
     },
     {
       "val": "2",
+      "offset": 57
+    },
+    {
+      "val": "2",
+      "offset": 59
+    },
+    {
+      "val": "30",
+      "offset": 61
+    },
+    {
+      "val": "true",
       "offset": 64
-    },
-    {
-      "val": "2",
-      "offset": 67
     }
   ],
-  "location": "UMSStepDefinitions.the_admin_creates_the_course_by_Software_Engineering_classsize_has_a_project(int,int,int)"
+  "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_course_is_created()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.scenario({
-  "line": 15,
-  "name": "Admin Creates a course before registration starts",
-  "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-before-registration-starts;;3",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 4,
-  "name": "the university is initialized",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 5,
-  "name": "Wait for System Time Start Event to Fire",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 6,
-  "name": "the user selects admin option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "the admin logs in with password",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "the admin selects create course option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "the admin creates the course by 115002, Computer Animation,   2, 2, \u003cclasssize\u003e,\u003chas a project\u003e",
-  "matchedColumns": [
-    0,
-    1,
-    2,
-    3
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 10,
-  "name": "the course is created",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_university_is_initialized()"
-});
-formatter.result({
-  "duration": 70409,
+  "duration": 2243090,
   "status": "passed"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
-});
-formatter.result({
-  "duration": 12911,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_user_selects_admin_option()"
-});
-formatter.result({
-  "duration": 12572,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_admin_logs_in_with_password(String)"
-});
-formatter.result({
-  "duration": 209802,
-  "error_message": "cucumber.runtime.CucumberException: Arity mismatch: Step Definition \u0027com.ums.cucumber.features.UMSStepDefinitions.the_admin_logs_in_with_password(String) in file:/Users/nishantsood/Workspace/Eclipse/UniversityManagementSystem/target/classes/\u0027 with pattern [^the admin logs in with password$] is declared with 1 parameters. However, the gherkin step has 0 arguments []. \nStep: And the admin logs in with password\n\tat cucumber.runtime.StepDefinitionMatch.arityMismatch(StepDefinitionMatch.java:102)\n\tat cucumber.runtime.StepDefinitionMatch.transformedArgs(StepDefinitionMatch.java:60)\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_admin_selects_create_course_option()"
-});
-formatter.result({
-  "status": "skipped"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "115002",
-      "offset": 32
-    },
-    {
-      "val": "2",
-      "offset": 62
-    },
-    {
-      "val": "2",
-      "offset": 65
+      "val": "the course",
+      "offset": 0
     }
   ],
-  "location": "UMSStepDefinitions.the_admin_creates_the_course_by_Computer_Animation_classsize_has_a_project(int,int,int)"
+  "location": "UMSStepDefinitions.unsuccess(String)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_course_is_created()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 55612,
+  "status": "passed"
 });
 formatter.scenarioOutline({
-  "line": 18,
+  "line": 41,
   "name": "Admin Creates a course after registration starts",
   "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts",
+  "id": "all-ums-invalid-features;admin-creates-a-course-after-registration-starts",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 19,
-  "name": "the university is initialized",
+  "line": 42,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 20,
-  "name": "Wait for System End Time Event to Fire",
+  "line": 43,
+  "name": "Wait for System Time Start Event to Fire",
   "keyword": "And "
 });
 formatter.step({
-  "line": 21,
+  "line": 44,
   "name": "Wait for Registration Start Event to Fire",
   "keyword": "And "
 });
 formatter.step({
-  "line": 22,
-  "name": "the user selects admin option",
+  "line": 45,
+  "name": "the user inputs 1",
   "keyword": "And "
 });
 formatter.step({
-  "line": 23,
-  "name": "the admin logs in successfully",
+  "line": 46,
+  "name": "the user logs in with password admin",
   "keyword": "And "
 });
 formatter.step({
-  "line": 24,
-  "name": "the admin selects create course option",
+  "line": 47,
+  "name": "the user inputs 1",
   "keyword": "And "
 });
 formatter.step({
-  "line": 25,
-  "name": "the admin creates the course by \u003ccourse code\u003e, \u003ctitle\u003e,\u003cnumber of assignments\u003e, \u003cnumber of midterms\u003e, \u003cclasssize\u003e,\u003chas a project\u003e",
+  "line": 48,
+  "name": "the admin creates the course \u003ccourse code\u003e,\u003ctitle\u003e,\u003cnumber of assignments\u003e,\u003cnumber of midterms\u003e,\u003cclasssize\u003e,\u003chas a project\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 26,
-  "name": "the course cannot be created",
+  "line": 49,
+  "name": "the course unsuccess",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 27,
+  "line": 51,
   "name": "",
   "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts;",
+  "id": "all-ums-invalid-features;admin-creates-a-course-after-registration-starts;",
   "rows": [
     {
       "cells": [
@@ -380,407 +728,1008 @@ formatter.examples({
         "title",
         "number of assignments",
         "number of midterms",
-        "class size",
-        "has a project(true/false)"
+        "classsize",
+        "has a project"
       ],
-      "line": 28,
-      "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts;;1"
+      "line": 52,
+      "id": "all-ums-invalid-features;admin-creates-a-course-after-registration-starts;;1"
     },
     {
       "cells": [
-        "115001",
-        "Software Engineering",
+        "115010",
+        "OOP",
         "2",
         "2",
         "30",
         "true"
       ],
-      "line": 29,
-      "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts;;2"
-    },
-    {
-      "cells": [
-        "115002",
-        "Computer Animation",
-        "2",
-        "2",
-        "30",
-        "true"
-      ],
-      "line": 30,
-      "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts;;3"
+      "line": 53,
+      "id": "all-ums-invalid-features;admin-creates-a-course-after-registration-starts;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 29,
+  "line": 53,
   "name": "Admin Creates a course after registration starts",
   "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts;;2",
+  "id": "all-ums-invalid-features;admin-creates-a-course-after-registration-starts;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 19,
-  "name": "the university is initialized",
+  "line": 42,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 20,
-  "name": "Wait for System End Time Event to Fire",
+  "line": 43,
+  "name": "Wait for System Time Start Event to Fire",
   "keyword": "And "
 });
 formatter.step({
-  "line": 21,
+  "line": 44,
   "name": "Wait for Registration Start Event to Fire",
   "keyword": "And "
 });
 formatter.step({
-  "line": 22,
-  "name": "the user selects admin option",
+  "line": 45,
+  "name": "the user inputs 1",
   "keyword": "And "
 });
 formatter.step({
-  "line": 23,
-  "name": "the admin logs in successfully",
+  "line": 46,
+  "name": "the user logs in with password admin",
   "keyword": "And "
 });
 formatter.step({
-  "line": 24,
-  "name": "the admin selects create course option",
+  "line": 47,
+  "name": "the user inputs 1",
   "keyword": "And "
 });
 formatter.step({
-  "line": 25,
-  "name": "the admin creates the course by 115001, Software Engineering,2, 2, \u003cclasssize\u003e,\u003chas a project\u003e",
+  "line": 48,
+  "name": "the admin creates the course 115010,OOP,2,2,30,true",
   "matchedColumns": [
     0,
     1,
     2,
-    3
+    3,
+    4,
+    5
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 26,
-  "name": "the course cannot be created",
+  "line": 49,
+  "name": "the course unsuccess",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_university_is_initialized()"
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
 });
 formatter.result({
-  "duration": 25224,
+  "duration": 28119,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.wait_for_System_End_Time_Event_to_Fire()"
+  "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 17730,
+  "duration": 19082,
   "status": "passed"
 });
 formatter.match({
   "location": "UMSStepDefinitions.wait_for_Registration_Start_Event_to_Fire()"
 });
 formatter.result({
-  "duration": 15662,
+  "duration": 15665,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_user_selects_admin_option()"
-});
-formatter.result({
-  "duration": 19118,
-  "status": "passed"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_admin_selects_create_course_option()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_course_cannot_be_created()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.scenario({
-  "line": 30,
-  "name": "Admin Creates a course after registration starts",
-  "description": "",
-  "id": "admin-creates-a-course;admin-creates-a-course-after-registration-starts;;3",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 19,
-  "name": "the university is initialized",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 20,
-  "name": "Wait for System End Time Event to Fire",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Wait for Registration Start Event to Fire",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "the user selects admin option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "the admin logs in successfully",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "the admin selects create course option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "the admin creates the course by 115002, Computer Animation,2, 2, \u003cclasssize\u003e,\u003chas a project\u003e",
-  "matchedColumns": [
-    0,
-    1,
-    2,
-    3
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
   ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 26,
-  "name": "the course cannot be created",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_university_is_initialized()"
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 45747,
+  "duration": 61117,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.wait_for_System_End_Time_Event_to_Fire()"
+  "arguments": [
+    {
+      "val": "admin",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
 });
 formatter.result({
-  "duration": 19868,
+  "duration": 35917,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.wait_for_Registration_Start_Event_to_Fire()"
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
 });
 formatter.result({
-  "duration": 19938,
+  "duration": 44502,
   "status": "passed"
 });
 formatter.match({
-  "location": "UMSStepDefinitions.the_user_selects_admin_option()"
+  "arguments": [
+    {
+      "val": "115010",
+      "offset": 29
+    },
+    {
+      "val": "OOP",
+      "offset": 36
+    },
+    {
+      "val": "2",
+      "offset": 40
+    },
+    {
+      "val": "2",
+      "offset": 42
+    },
+    {
+      "val": "30",
+      "offset": 44
+    },
+    {
+      "val": "true",
+      "offset": 47
+    }
+  ],
+  "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
 });
 formatter.result({
-  "duration": 22545,
+  "duration": 560925,
   "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
 formatter.match({
-  "location": "UMSStepDefinitions.the_admin_selects_create_course_option()"
+  "arguments": [
+    {
+      "val": "the course",
+      "offset": 0
+    }
+  ],
+  "location": "UMSStepDefinitions.unsuccess(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 30821,
+  "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({
-  "location": "UMSStepDefinitions.the_course_cannot_be_created()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.uri("umsfeature.feature");
+formatter.uri("validpath.feature");
 formatter.feature({
   "comments": [
     {
       "line": 1,
-      "value": "# Feature was referenced from //https://examples.javacodegeeks.com/core-java/junit/junit-cucumber-example/"
+      "value": "#Feature File contains all valid paths"
     }
   ],
   "line": 2,
-  "name": "University Management System",
+  "name": "ALL UMS VALID FEATURES",
   "description": "",
-  "id": "university-management-system",
+  "id": "all-ums-valid-features",
   "keyword": "Feature"
 });
-formatter.scenario({
+formatter.scenarioOutline({
   "comments": [
     {
-      "line": 4,
-      "value": "########------INTERNAL TIMER-------#######"
+      "line": 3,
+      "value": "#LOGIN"
     }
   ],
-  "line": 5,
-  "name": "",
+  "line": 4,
+  "name": "Admin Login with valid password",
   "description": "",
-  "id": "university-management-system;",
-  "type": "scenario",
-  "keyword": "Scenario"
+  "id": "all-ums-valid-features;admin-login-with-valid-password",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 6,
-  "name": "Check InternalTimer Term Startup",
+  "line": 5,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
+  "line": 6,
+  "name": "the user inputs \u003cinput\u003e",
+  "keyword": "And "
+});
+formatter.step({
   "line": 7,
-  "name": "InternalTimer Starts Term Setup",
+  "name": "the user logs in with password \u003cpassword\u003e",
   "keyword": "When "
 });
 formatter.step({
   "line": 8,
-  "name": "Term Start Event is Fired",
+  "name": "the admin is logged in",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.scenario({
+formatter.examples({
   "line": 10,
   "name": "",
   "description": "",
-  "id": "university-management-system;",
+  "id": "all-ums-valid-features;admin-login-with-valid-password;",
+  "rows": [
+    {
+      "cells": [
+        "input",
+        "password"
+      ],
+      "line": 11,
+      "id": "all-ums-valid-features;admin-login-with-valid-password;;1"
+    },
+    {
+      "cells": [
+        "admin",
+        "admin"
+      ],
+      "line": 12,
+      "id": "all-ums-valid-features;admin-login-with-valid-password;;2"
+    },
+    {
+      "cells": [
+        "1",
+        "admin"
+      ],
+      "line": 13,
+      "id": "all-ums-valid-features;admin-login-with-valid-password;;3"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 12,
+  "name": "Admin Login with valid password",
+  "description": "",
+  "id": "all-ums-valid-features;admin-login-with-valid-password;;2",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 11,
-  "name": "Check InternalTimer Starts Registration",
+  "line": 5,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 12,
-  "name": "InternalTimer Starts Registration",
+  "line": 6,
+  "name": "the user inputs admin",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "the user logs in with password admin",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 13,
-  "name": "Registeration Start Event is Fired",
+  "line": 8,
+  "name": "the admin is logged in",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 43593,
+  "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.scenario({
-  "comments": [
+formatter.match({
+  "arguments": [
     {
-      "line": 15,
-      "value": "#########-----ADMIN------###########"
+      "val": "admin",
+      "offset": 16
     }
   ],
-  "line": 17,
-  "name": "",
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 57813,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "admin",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
+});
+formatter.result({
+  "duration": 54760,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_admin_is_logged_in()"
+});
+formatter.result({
+  "duration": 26165,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 13,
+  "name": "Admin Login with valid password",
   "description": "",
-  "id": "university-management-system;",
+  "id": "all-ums-valid-features;admin-login-with-valid-password;;3",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 5,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "the user inputs 1",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "the user logs in with password admin",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 8,
+  "name": "the admin is logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 29110,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 39046,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "admin",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
+});
+formatter.result({
+  "duration": 38739,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_admin_is_logged_in()"
+});
+formatter.result({
+  "duration": 14366,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "line": 15,
+  "name": "Student Login with valid password",
+  "description": "",
+  "id": "all-ums-valid-features;student-login-with-valid-password",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 16,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 17,
+  "name": "the user inputs \u003cinput\u003e",
+  "keyword": "And "
 });
 formatter.step({
   "line": 18,
-  "name": "Check InternalTimer Starts Registration",
-  "keyword": "Given "
+  "name": "the user logs in with studentnumber \u003cid\u003e",
+  "keyword": "When "
 });
 formatter.step({
   "line": 19,
-  "name": "InternalTimer Starts Registration",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 20,
-  "name": "Registration Start Event is Fired",
+  "name": "the student is logged in",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.scenario({
-  "line": 22,
+formatter.examples({
+  "line": 21,
   "name": "",
   "description": "",
-  "id": "university-management-system;",
+  "id": "all-ums-valid-features;student-login-with-valid-password;",
+  "rows": [
+    {
+      "cells": [
+        "input",
+        "id"
+      ],
+      "line": 22,
+      "id": "all-ums-valid-features;student-login-with-valid-password;;1"
+    },
+    {
+      "cells": [
+        "student",
+        "8543748"
+      ],
+      "line": 23,
+      "id": "all-ums-valid-features;student-login-with-valid-password;;2"
+    },
+    {
+      "cells": [
+        "2",
+        "8543748"
+      ],
+      "line": 24,
+      "id": "all-ums-valid-features;student-login-with-valid-password;;3"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 23,
+  "name": "Student Login with valid password",
+  "description": "",
+  "id": "all-ums-valid-features;student-login-with-valid-password;;2",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 23,
-  "name": "Check InternalTimer Starts Registration",
+  "line": 16,
+  "name": "the univeristy system has started",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 24,
-  "name": "InternalTimer Starts Registration",
+  "line": 17,
+  "name": "the user inputs student",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "the user logs in with studentnumber 8543748",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 25,
-  "name": "Registration Start Event is Fired",
+  "line": 19,
+  "name": "the student is logged in",
   "keyword": "Then "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 39918,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "student",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 61153,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "8543748",
+      "offset": 36
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
+});
+formatter.result({
+  "duration": 73827,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_student_is_logged_in()"
+});
+formatter.result({
+  "duration": 18109,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 24,
+  "name": "Student Login with valid password",
+  "description": "",
+  "id": "all-ums-valid-features;student-login-with-valid-password;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 16,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 17,
+  "name": "the user inputs 2",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "the user logs in with studentnumber 8543748",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 19,
+  "name": "the student is logged in",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 27269,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "2",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 39669,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "8543748",
+      "offset": 36
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_studentnumber(String)"
+});
+formatter.result({
+  "duration": 60485,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_student_is_logged_in()"
+});
+formatter.result({
+  "duration": 14913,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "comments": [
+    {
+      "line": 26,
+      "value": "#ADMIN CREATE COURSE"
+    }
+  ],
+  "line": 28,
+  "name": "Admin Creates a course before registration starts",
+  "description": "",
+  "id": "all-ums-valid-features;admin-creates-a-course-before-registration-starts",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 29,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 30,
+  "name": "Wait for System Time Start Event to Fire",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "the user inputs 1",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "the user logs in with password admin",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "the user inputs 1",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "the admin creates the course \u003ccourse code\u003e,\u003ctitle\u003e,\u003cnumber of assignments\u003e,\u003cnumber of midterms\u003e,\u003cclasssize\u003e,\u003chas a project\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 35,
+  "name": "the course success",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 37,
+  "name": "",
+  "description": "",
+  "id": "all-ums-valid-features;admin-creates-a-course-before-registration-starts;",
+  "rows": [
+    {
+      "cells": [
+        "course code",
+        "title",
+        "number of assignments",
+        "number of midterms",
+        "classsize",
+        "has a project"
+      ],
+      "line": 38,
+      "id": "all-ums-valid-features;admin-creates-a-course-before-registration-starts;;1"
+    },
+    {
+      "cells": [
+        "115010",
+        "OOP",
+        "2",
+        "2",
+        "30",
+        "true"
+      ],
+      "line": 39,
+      "id": "all-ums-valid-features;admin-creates-a-course-before-registration-starts;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 39,
+  "name": "Admin Creates a course before registration starts",
+  "description": "",
+  "id": "all-ums-valid-features;admin-creates-a-course-before-registration-starts;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 29,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 30,
+  "name": "Wait for System Time Start Event to Fire",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "the user inputs 1",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "the user logs in with password admin",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "the user inputs 1",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "the admin creates the course 115010,OOP,2,2,30,true",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 35,
+  "name": "the course success",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 31092,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.wait_for_System_Time_Start_Event_to_Fire()"
+});
+formatter.result({
+  "duration": 13336,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 40476,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "admin",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
+});
+formatter.result({
+  "duration": 55099,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 49061,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "115010",
+      "offset": 29
+    },
+    {
+      "val": "OOP",
+      "offset": 36
+    },
+    {
+      "val": "2",
+      "offset": 40
+    },
+    {
+      "val": "2",
+      "offset": 42
+    },
+    {
+      "val": "30",
+      "offset": 44
+    },
+    {
+      "val": "true",
+      "offset": 47
+    }
+  ],
+  "location": "UMSStepDefinitions.the_admin_creates_the_course(int,String,int,int,int,String)"
+});
+formatter.result({
+  "duration": 914300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "the course",
+      "offset": 0
+    }
+  ],
+  "location": "UMSStepDefinitions.success(String)"
+});
+formatter.result({
+  "duration": 76896,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "comments": [
+    {
+      "line": 42,
+      "value": "#LOGOUT"
+    }
+  ],
+  "line": 44,
+  "name": "Admin Logouts",
+  "description": "",
+  "id": "all-ums-valid-features;admin-logouts",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "the user inputs \u003c1\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 47,
+  "name": "the user logs in with password \u003cadmin\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 48,
+  "name": "the user inputs \u003cinput\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 49,
+  "name": "the admin is logged out",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 51,
+  "name": "",
+  "description": "",
+  "id": "all-ums-valid-features;admin-logouts;",
+  "rows": [
+    {
+      "cells": [
+        "input"
+      ],
+      "line": 52,
+      "id": "all-ums-valid-features;admin-logouts;;1"
+    },
+    {
+      "cells": [
+        "9"
+      ],
+      "line": 53,
+      "id": "all-ums-valid-features;admin-logouts;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 53,
+  "name": "Admin Logouts",
+  "description": "",
+  "id": "all-ums-valid-features;admin-logouts;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "the univeristy system has started",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "the user inputs \u003c1\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 47,
+  "name": "the user logs in with password \u003cadmin\u003e",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 48,
+  "name": "the user inputs 9",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 49,
+  "name": "the admin is logged out",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_univeristy_system_has_started()"
+});
+formatter.result({
+  "duration": 26237,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\u003c1\u003e",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 39586,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\u003cadmin\u003e",
+      "offset": 31
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_logs_in_with_password(String)"
+});
+formatter.result({
+  "duration": 31718,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "9",
+      "offset": 16
+    }
+  ],
+  "location": "UMSStepDefinitions.the_user_inputs(String)"
+});
+formatter.result({
+  "duration": 279594,
+  "status": "passed"
+});
+formatter.match({
+  "location": "UMSStepDefinitions.the_admin_is_logged_out()"
+});
+formatter.result({
+  "duration": 25497,
+  "status": "passed"
 });
 });

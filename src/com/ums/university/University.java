@@ -42,8 +42,14 @@ public class University implements IUniversity {
 		return _instance;
 	}
 	
+	public void Reset() 
+	{
+		courses.clear();
+		students.clear();
+	}
+	
 	public University() {
-		
+		Reset();
 		InitializeCourses();
 		InitializeStudents();
 		universityCourses = courses.size();

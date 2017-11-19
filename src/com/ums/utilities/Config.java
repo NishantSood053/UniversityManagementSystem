@@ -16,4 +16,7 @@ public class Config {
 	public static final String AdminMenu = "What can I do for you?\nMenu:\n1)Create Course \n2)Create Student \n3)Show Courses \n4)Show Students \n5)Delete Student \n6)Cancel Course \n7)Delete Course \n8)Register Student to a Course \n9)Logout";
 	public static final String StudentMenu = "What can I do for you?\nMenu:\n1)Get All Courses \n2)Select Course \n3)Register Course \n4)Drop Course \n5)Deregister Course \n6)Get Registered Courses  \n7)Logout";
 	public static final int EVENTCOUNT = 4;
+	
+	public static final String SUCCESS = "Success";
+	public static final String FALIURE = "Faliure";
 }

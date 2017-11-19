@@ -98,31 +98,31 @@ public class OutputHandler {
         		if(!isCourseCodeCorrect(strArray[0])) 
              {
         				SetStateWithMessage(output, CREATECOURSE, "Course Code Incorrect(Should be 6 digit and should not start from 0)");
-        				output.setOutput("Unsuccess");
+        				output.setOutput(Config.FALIURE);
              }
         		//If the number of assignments is not correct
         		else if(!isInteger(strArray[2]) || numberOfAssignments < 0 || numberOfAssignments > 5 ) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The assignments input should be integer and not more than 5");
-        			output.setOutput("Unsuccess");
+        			output.setOutput(Config.FALIURE);
              }
         		//If the number of midterms is not correct
         		else if(!isInteger(strArray[3]) || numberOfMidterms < 0 || numberOfMidterms > 2 ) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The midterm input should be integer and not more than 2");
-        			output.setOutput("Unsuccess");
+        			output.setOutput(Config.FALIURE);
              }
         		//If the class size is not correct
         		else if(!isInteger(strArray[3]) || classSize < 25) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The input should be integer and minimum class size should be 25");
-        			output.setOutput("Unsuccess");
+        			output.setOutput(Config.FALIURE);
              }
         		//If the has project value is not correct
         		else if(!isBoolean(strArray[5])) 
              {
         			SetStateWithMessage(output, CREATECOURSE, "The input for HasProject should be either \"true\" or \"false\" ");
-        			output.setOutput("Unsuccess");
+        			output.setOutput(Config.FALIURE);
              }
              else 
              {
@@ -136,11 +136,11 @@ public class OutputHandler {
             	 try {
             		 University.getInstance().CreateCourse(courseTitle,courseCode,numberOfAssignments,numberOfMidterms,classSize,hasProject,true);
             		 output.setOutput("Course Created Successfully\n");
-            		 output.setOutput("Success");
+            		 output.setOutput(Config.SUCCESS);
             		 output.setState(ADMIN);
             	 }catch (Exception e) {
             		 SetStateWithMessage(output, CREATECOURSE, e.getMessage());
-            		 output.setOutput("Unsuccess");
+            		 output.setOutput(Config.FALIURE);
             	 	}
              }
     		
@@ -159,7 +159,7 @@ public class OutputHandler {
         if(strArray.length != 3) 
         {
         		SetStateWithMessage(output, CREATESTUDENT, "Please enter all the input parameters");
-        		
+        		output.setOutput(Config.FALIURE);
         }else 
         {
         		int studentID = Integer.parseInt(strArray[0]);
@@ -169,10 +169,12 @@ public class OutputHandler {
             if(!isInteger(strArray[0])) 
             {
             		SetStateWithMessage(output,CREATESTUDENT,"Student ID should be integer");
+            		output.setOutput(Config.FALIURE);
             }
             else if(!isBoolean(strArray[2])) 
             {
             		SetStateWithMessage(output,CREATESTUDENT,"Full time status should be either true or false");
+            		output.setOutput(Config.FALIURE);
             }
             else 
             {
@@ -180,8 +182,10 @@ public class OutputHandler {
 	            		University.getInstance().CreateStudent(studentID, studentName, isFullTime);
 	            		output.setOutput("Student Created Successfully\n");
 	            		output.setState(ADMIN);
+	            		output.setOutput(Config.SUCCESS);
 	            	}catch (Exception e) {
 	            		SetStateWithMessage(output, CREATESTUDENT, e.getMessage());
+	            		output.setOutput(Config.FALIURE);
 	            	}
             }
             
@@ -193,6 +197,7 @@ public class OutputHandler {
 	public Output deleteStudent(String input) {
 
 		Output output=new Output("",0);
+		System.out.println("Input Valie"+input);
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {
@@ -226,6 +231,7 @@ public class OutputHandler {
 	
 	public Output cancelCourse(String input) {
 		Output output=new Output("",0);
+		System.out.println("Input Valie"+input);
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {
@@ -258,11 +264,13 @@ public class OutputHandler {
 	
 	public Output deleteCourse(String input) {
 		Output output=new Output("",0);
+		
+		
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {
         		SetStateWithMessage(output, DELETECOURSE, "Please enter all the input parameters");
-        		
+        		output.setOutput(Config.FALIURE);
         }else 
         {
         		int courseCode = 0;
@@ -271,6 +279,7 @@ public class OutputHandler {
 	        	}catch(Exception e) 
 	        	{
 	        		SetStateWithMessage(output,DELETECOURSE,"Please enter the Correct Course code(It should be a 6 digit integer value)");
+	        		output.setOutput(Config.FALIURE);
 	        	}
         		
             
@@ -278,9 +287,11 @@ public class OutputHandler {
 	        		Course course = University.getInstance().GetCourse(courseCode);
 	        		University.getInstance().DestroyCourse(course);
 	        		output.setOutput("Course Deleted Successfully\n");
+	        		output.setOutput(Config.SUCCESS);
 	        		output.setState(ADMIN);
 	        	}catch (Exception e) {
 	        		SetStateWithMessage(output, DELETECOURSE, e.getMessage());
+	        		output.setOutput(Config.FALIURE);
 	        	}
 	   
         }
@@ -358,6 +369,7 @@ public class OutputHandler {
 	
 	public Output selectCourse(String input) {
 		Output output=new Output("",0);
+		System.out.println("Input Valie"+input);
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {
@@ -406,7 +418,7 @@ public class OutputHandler {
 		Output output=new Output("",0);
 		String[] strArray = null;   
         strArray = input.split(",");
-        
+        System.out.println("Input Valie"+input);
         //Expect the array to be of length 3
         if(strArray.length != 2) 
         {
@@ -459,6 +471,7 @@ public class OutputHandler {
 
 	public Output deregisterCourse(String input) {
 		Output output=new Output("",0);
+		System.out.println("Input Valie"+input);
 		//Expect the array to be of length 1
         if(input.equals("") || input.equals(" ")) 
         {

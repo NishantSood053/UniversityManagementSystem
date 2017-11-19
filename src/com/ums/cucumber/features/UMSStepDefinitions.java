@@ -4,6 +4,7 @@ import com.ums.handler.InputHandler;
 import com.ums.handler.OutputHandler;
 import com.ums.handler.model.ServerOutput;
 import com.ums.university.University;
+import com.ums.utilities.Config;
 import com.ums.utilities.TermEvents;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -21,8 +22,8 @@ public class UMSStepDefinitions  {
 	String output;
 	
 	//-----GIVEN's---------------
-	@Given("^the univeristy system has started$")
-	public void the_univeristy_system_has_started() throws Throwable {
+	@Given("^the university system has started$")
+	public void the_university_system_has_started() throws Throwable {
 	    University.getInstance();
 	    serverOutput = inputHandler.processInput("\n", InputHandler.WAITING);
 		state = serverOutput.getState();
@@ -89,7 +90,7 @@ public class UMSStepDefinitions  {
 		String input = courseCode + "," + title + "," 
 				+ noOfAssignments + "," + noOfMidterms
 				+ "," + classSize + "," + hasProject;
-		System.out.println("Input :"+input);
+		
 		serverOutput = inputHandler.processInput(input,state);
 		state = serverOutput.getState();
 		output = serverOutput.getOutput();
@@ -97,17 +98,38 @@ public class UMSStepDefinitions  {
 
 	@Then("^(.*) success$")
 	public void success(String input) throws Throwable {
-		assertThat(output, equalTo("Success"));
+		assertThat(output, equalTo(Config.SUCCESS));
 	}
 	
-	@Then("^(.*) unsuccess$")
-	public void unsuccess(String input) throws Throwable {
-		assertThat(output, equalTo("Unsuccess"));
+	@Then("^(.*) faliure$")
+	public void faliure(String input) throws Throwable {
+		assertThat(output, equalTo(Config.FALIURE));
 	}
 	
 	@Given("^Wait for Registration Start Event to Fire$")
 	public void wait_for_Registration_Start_Event_to_Fire() throws Throwable {
 		TermEvents.SYSTEMENDED = true;
+	}
+	
+	@When("^the admin creates the student (\\d+),(.*),(.*)$")
+	public void the_admin_creates_the_student_john_true(int studentId,String name,String isFulltime) throws Throwable {
+	   
+		String input = studentId + "," + name + "," + isFulltime; 
+		serverOutput = inputHandler.processInput(input,state);
+		state = serverOutput.getState();
+		output = serverOutput.getOutput();
+	}
+	
+	@When("^the admin deletes course (.*)$")
+	public void the_admin_deletes_course(String courseCode) throws Throwable {
+		serverOutput = inputHandler.processInput(courseCode,state);
+		state = serverOutput.getState();
+		output = serverOutput.getOutput();
+	}
+
+	@Given("^Wait for Term End Event to Fire$")
+	public void wait_for_Term_End_Event_to_Fire() throws Throwable {
+	    TermEvents.TERMENDED = true;
 	}
 
 
