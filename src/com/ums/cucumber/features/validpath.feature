@@ -69,6 +69,22 @@ Feature: ALL UMS VALID FEATURES
 	    | course code	| title		 			| number of assignments    | number of midterms | classsize 	| has a project			   |
 		| 115020			| Ad Hoc Networking		| 2    					   | 2 				   | 30 			| true 					   |
     	   
+#Admin Delete Student
+
+ 	Scenario Outline: Admin Deletes a student before registration starts
+			Given the university system has started
+			And Wait for System Time Start Event to Fire
+			And the user inputs 1 
+			And the user logs in with password admin
+			And the user inputs 2
+			And the admin creates the student <student id>,<name>,<is fulltime>
+			And the user inputs 5
+			When the admin deletes student <student id>
+			Then delete student success	
+		
+		Examples:
+	    | student id		 | name       | is fulltime		|
+	    | 8543730      	 | wick       | false            |
 	   		
  #LOGOUT 
     		

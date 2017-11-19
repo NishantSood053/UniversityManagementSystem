@@ -454,6 +454,10 @@ public class University implements IUniversity {
 	@Override
 	public boolean DeleteStudent(Student student) {
 		boolean isDeleted = false;
+		if(TermEvents.TERMENDED)
+		{
+			throw new NullPointerException("Term has Ended");
+		}
 		if(student != null) 
 		{
 			if(students.contains(student)) 

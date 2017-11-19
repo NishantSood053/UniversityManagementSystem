@@ -202,7 +202,7 @@ public class OutputHandler {
         if(input.equals("") || input.equals(" ")) 
         {
         		SetStateWithMessage(output, DELETESTUDENT, "Please enter all the input parameters");
-        		
+        		output.setOutput(Config.FALIURE);
         }else 
         {
         		int studentID = 0;
@@ -211,6 +211,7 @@ public class OutputHandler {
 	        	}catch(Exception e) 
 	        	{
 	        		SetStateWithMessage(output,DELETESTUDENT,"Student ID should be integer");
+	        		output.setOutput(Config.FALIURE);
 	        	}
         		
             
@@ -219,8 +220,10 @@ public class OutputHandler {
 	        		University.getInstance().DeleteStudent(student);
 	        		output.setOutput("Student Deleted Successfully\n");
 	        		output.setState(ADMIN);
+	        		output.setOutput(Config.SUCCESS);
 	        	}catch (Exception e) {
 	        		SetStateWithMessage(output, DELETESTUDENT, e.getMessage());
+	        		output.setOutput(Config.FALIURE);
 	        	}
 	   
         }

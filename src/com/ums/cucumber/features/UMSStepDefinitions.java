@@ -133,6 +133,14 @@ public class UMSStepDefinitions  {
 	}
 
 
+	@When("^the admin deletes student (.*)$")
+	public void the_admin_deletes_student(String studentId) throws Throwable {
+		serverOutput = inputHandler.processInput(studentId,state);
+		state = serverOutput.getState();
+		output = serverOutput.getOutput();
+	}
+
+
 	/*
 	@Given("^the university is initialized$")
 	public void the_university_is_initialized() throws Throwable {
