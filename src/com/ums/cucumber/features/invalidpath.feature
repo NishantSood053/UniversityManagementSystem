@@ -160,6 +160,21 @@ Scenario Outline: Student Selects a course which does not exist
     		|112001  	|	
  
  #Student Registers a Course
+ 
+ Scenario Outline: Student Registers for a course before registration starts 
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code>
+		When the user inputs 3
+		Then register course faliure 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|
+    		
   	Scenario Outline: Student Registers for a course after registration ends 
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
@@ -194,4 +209,53 @@ Scenario Outline: Student Selects a course which does not exist
     		|course code	|
     		|115001  	|	
     		
-  
+  #Student Deregisters a  course
+ 
+ Scenario Outline: Student De-Registers for a course before registration starts 
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code>
+		And the user inputs 3
+		And the user inputs 5
+		When the user selects the course <course code>
+		Then deregister course faliure 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|	 
+    		
+ Scenario Outline: Student De-Registers for a course after registration ends 
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+	     And Wait for Registration End Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code>
+		And the user inputs 3
+		And the user inputs 5
+		When the user selects the course <course code>
+		Then deregister course faliure 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|	 
+    		
+ Scenario Outline: Student De-Registers for a course not registered to 
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 5
+		When the user selects the course <course code>
+		Then deregister course faliure 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|	  
+ 

@@ -485,6 +485,7 @@ public class OutputHandler {
         if(input.equals("") || input.equals(" ")) 
         {
         		SetStateWithMessage(output, DEREGISTERCOURSE, "Please enter all the input parameters");
+        		output.setOutput(Config.FALIURE);
         		
         }else 
         {
@@ -495,9 +496,11 @@ public class OutputHandler {
 	        		loggedInStudent.DeregisterCourse(course);
 	        		output.setOutput("Course Deregistred Successfully\n");
 	        		output.setState(STUDENT);
+	        		output.setOutput(Config.SUCCESS);
 	        	}catch(Exception e) 
 	        	{
 	        		SetStateWithMessage(output,DEREGISTERCOURSE,"Course Cannot be Deregistred.\nPlease enter the Correct Course code(It should be a 6 digit integer value)");
+	        		output.setOutput(Config.FALIURE);
 	        	}
             
 	   
