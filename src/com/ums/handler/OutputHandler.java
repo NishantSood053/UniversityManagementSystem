@@ -411,9 +411,11 @@ public class OutputHandler {
 				University.getInstance().RegisterStudentforCourse(loggedInStudent, selectedCourse);
 				output.setOutput("Course Registered Successfully\n");
         			output.setState(STUDENT);
+        			output.setOutput(Config.SUCCESS);
 			}catch(Exception e) 
 			{
 				SetStateWithMessage(output, STUDENT, e.getMessage());
+				output.setOutput(Config.FALIURE);
 			}
 		}
 		

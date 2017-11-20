@@ -119,7 +119,7 @@ Scenario Outline: Admin cancels the course before term ends
   #Student Selects a Course
   Scenario Outline: Student Selects an exisiting Course
 		Given the university system has started
-		And the user inputs student
+		And the user inputs 2
 		And the user logs in with studentnumber 8543748
 		And the user inputs 2
 		When the user selects the course <course code>
@@ -127,6 +127,23 @@ Scenario Outline: Admin cancels the course before term ends
 	
 		Examples:
     		|course code	|
-    		|115001  	|	 
+    		|115001  	|	
     		
-  
+ #Student Registers a Course
+  	Scenario Outline: Student Registers for a course after registration starts and before term starts
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code>
+		When the user inputs 3
+		Then register course success 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|	  						
+   
+ 
+ 
