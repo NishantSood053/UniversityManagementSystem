@@ -47,6 +47,11 @@ public class UMSStepDefinitions  {
 		TermEvents.SYSTEMENDED = true;
 	}
 	
+	@Given("^Wait for Term Start Event to Fire$")
+	public void wait_for_Term_Start_Event_to_Fire() throws Throwable {
+		TermEvents.REGISTERATIONENDED = true;
+	}
+
 	
 	@Given("^Wait for Term End Event to Fire$")
 	public void wait_for_Term_End_Event_to_Fire() throws Throwable {

@@ -145,9 +145,9 @@ Scenario Outline: Admin cancels the course before term ends
     		|course code	|
     		|115001  	|	  						
    
- #Student Deregisters a  course
+ #Student Deregisters a course
  
- Scenario Outline: Student De-Registers for a course after registration starts and before term starts
+ 	Scenario Outline: Student De-Registers for a course after registration starts and before term starts
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 	    And Wait for Registration Start Event to Fire
@@ -162,5 +162,29 @@ Scenario Outline: Admin cancels the course before term ends
 	
 		Examples:
     		|course code	|
-    		|115001  	|	  
+    		|115001  	|	
+ 
+ #Student Drops the course 
+ 	Scenario Outline: Student Drops for a course after term starts
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+	    And Wait for Term Start Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code>
+		And the user inputs 4
+		When the user selects the course <course code>
+		Then drop course success 
+	 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|	
+ 
+   
+ 
+ 		
+   
  

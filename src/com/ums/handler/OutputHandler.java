@@ -427,7 +427,7 @@ public class OutputHandler {
 		Output output=new Output("",0);
 		String[] strArray = null;   
         strArray = input.split(",");
-        System.out.println("Input Valie"+input);
+       
         //Expect the array to be of length 3
         if(strArray.length != 2) 
         {
@@ -471,8 +471,10 @@ public class OutputHandler {
 			loggedInStudent.DropCourse(selectedCourse);
 			output.setOutput("Course Dropped Successfully\n");
 			output.setState(STUDENT);
+			output.setOutput(Config.SUCCESS);
 		}catch (Exception e) {
 			SetStateWithMessage(output, DROPCOURSE, e.getMessage());
+			output.setOutput(Config.FALIURE);
 		}
 
 		return output.getOutput();

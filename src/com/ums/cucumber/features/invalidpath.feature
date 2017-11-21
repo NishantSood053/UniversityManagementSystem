@@ -147,7 +147,7 @@ Feature: ALL UMS INVALID FEATURES
 	    Then cancel course faliure
 
 #Student Selects the Course
-Scenario Outline: Student Selects a course which does not exist
+	Scenario Outline: Student Selects a course which does not exist
 		Given the university system has started
 		And the user inputs student
 		And the user logs in with studentnumber 8543748
@@ -160,8 +160,7 @@ Scenario Outline: Student Selects a course which does not exist
     		|112001  	|	
  
  #Student Registers a Course
- 
- Scenario Outline: Student Registers for a course before registration starts 
+ 	Scenario Outline: Student Registers for a course before registration starts 
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 	    And the user inputs student
@@ -191,7 +190,7 @@ Scenario Outline: Student Selects a course which does not exist
     		|course code	|
     		|115001  	|	
    
- Scenario Outline: Student Registers for an already registered course after registration starts 
+ 	Scenario Outline: Student Registers for an already registered course after registration starts 
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 	    And Wait for Registration Start Event to Fire
@@ -210,8 +209,7 @@ Scenario Outline: Student Selects a course which does not exist
     		|115001  	|	
     		
   #Student Deregisters a  course
- 
- Scenario Outline: Student De-Registers for a course before registration starts 
+ 	Scenario Outline: Student De-Registers for a course before registration starts 
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 		And the user inputs student
@@ -227,7 +225,7 @@ Scenario Outline: Student Selects a course which does not exist
     		|course code	|
     		|115001  	|	 
     		
- Scenario Outline: Student De-Registers for a course after registration ends 
+ 	Scenario Outline: Student De-Registers for a course after registration ends 
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 	    And Wait for Registration Start Event to Fire
@@ -245,7 +243,7 @@ Scenario Outline: Student Selects a course which does not exist
     		|course code	|
     		|115001  	|	 
     		
- Scenario Outline: Student De-Registers for a course not registered to 
+ 	Scenario Outline: Student De-Registers for a course not registered to 
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 	    And Wait for Registration Start Event to Fire
@@ -257,5 +255,40 @@ Scenario Outline: Student Selects a course which does not exist
 	
 		Examples:
     		|course code	|
-    		|115001  	|	  
+    		|115001  	|	
+    		
+  #Student Drops the course 
+ 	Scenario Outline: Student Drops a course before term starts
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code>
+		And the user inputs 4
+		When the user selects the course <course code>
+		Then drop course faliure 
+	 
+	
+		Examples:
+    		|course code	|
+    		|115001  	|
+    		
+    	Scenario Outline: Student Drops an unselected course after term starts
+		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+	    And Wait for Term Start Event to Fire
+		And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 4
+		When the user selects the course <course code>
+		Then drop course faliure 
+		
+		Examples:
+    		|course code	|
+    		|115001  	|
+	 
+
  
