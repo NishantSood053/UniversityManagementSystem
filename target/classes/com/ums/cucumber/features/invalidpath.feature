@@ -208,6 +208,59 @@ Feature: ALL UMS INVALID FEATURES
     		|course code	|
     		|115001  	|	
     		
+    	Scenario Outline: Student registers for more than 4 courses if full time after registration starts
+    		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+	    And the user inputs student
+		And the user logs in with studentnumber 8543748
+		And the user inputs 2
+		And the user selects the course <course code 1>
+		And the user inputs 3
+		And the user inputs 2
+		And the user selects the course <course code 2>
+		And the user inputs 3
+		And the user inputs 2
+		And the user selects the course <course code 3>
+		And the user inputs 3
+		And the user inputs 2
+		And the user selects the course <course code 4>
+		And the user inputs 3
+		And the user inputs 2
+		And the user selects the course <course code 5>
+		When the user inputs 3
+		Then register course faliure 
+		
+
+#Student with id 8543748 is a full time student and all the courses have been created when the university is initialized		
+		Examples: 
+      	| student number  | course code 1   | course code 2  | course code 3         | course code 4   | course code 5 |
+      	| 8543748	      |  115001 		   | 115002 		    | 114004   				 |       114001   | 114002		  | 
+      	
+      	
+      Scenario Outline: Student registers for more than 2 courses if part time after registration starts
+    		Given the university system has started
+		And Wait for System Time Start Event to Fire
+	    And Wait for Registration Start Event to Fire
+	    And the user inputs student
+		And the user logs in with studentnumber 8543746
+		And the user inputs 2
+		And the user selects the course <course code 1>
+		And the user inputs 3
+		And the user inputs 2
+		And the user selects the course <course code 2>
+		And the user inputs 3
+		And the user inputs 2
+		And the user selects the course <course code 3>
+		When the user inputs 3
+		Then register course faliure 
+		
+#Student with id 8543746 is a part time student and all the courses have been created when the university is initialized		
+		Examples: 
+      	| student number  | course code 1   | course code 2  | course code 3         |
+      	| 8543746	      |  115001 		   | 115002 		    | 114004   			   |
+
+    		
   #Student Deregisters a  course
  	Scenario Outline: Student De-Registers for a course before registration starts 
 		Given the university system has started
@@ -229,7 +282,7 @@ Feature: ALL UMS INVALID FEATURES
 		Given the university system has started
 		And Wait for System Time Start Event to Fire
 	    And Wait for Registration Start Event to Fire
-	     And Wait for Registration End Event to Fire
+	    And Wait for Registration End Event to Fire
 		And the user inputs student
 		And the user logs in with studentnumber 8543748
 		And the user inputs 2
