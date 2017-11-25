@@ -120,15 +120,15 @@ public class Student implements IStudent{
 		}
 		
 		
-		if((IsFullTime() && CurrentCourses().size() > University.MaxCoursesForFTStudents -1) 
-				|| (!IsFullTime() && CurrentCourses().size() > University.MaxCoursesForPTStudents -1)) 
+		if((IsFullTime() && CurrentCourses().size() > University.MaxCoursesForFTStudents) 
+				|| (!IsFullTime() && CurrentCourses().size() > University.MaxCoursesForPTStudents)) 
 		{
 			
 			message = "Cannot register for more courses: You are not allowed based on your status";
 			logger.error(message);
-			throw new NullPointerException(message);
+			return false;
 		}
-		System.out.println(IsFullTime()+" :"+CurrentCourses().size());
+		
 		logger.info("Course Registred Successfully "+course.Title());
 		currentCourses.add(course);
 		selectedCourse = null;
